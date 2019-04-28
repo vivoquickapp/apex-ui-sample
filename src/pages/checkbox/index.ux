@@ -1,0 +1,70 @@
+<import name="my-checkbox" src="apex-ui/components/checkbox/index"></import>
+<import name="my-checkbox-group" src="apex-ui/components/checkbox-group/index"></import>
+<import name="my-button" src="apex-ui/components/button/index"></import>
+<template>
+  <div class="wrap">
+    <text class="title">组合</text>
+    <my-checkbox-group id="myGroup" current="{{ current }}" onchange="handleFruitChange">
+      <my-checkbox group="myGroup" for="{{fruit}}" position="{{position}}" value="{{$item.name}}"></my-checkbox>
+    </my-checkbox-group>
+    <my-button onclick="handleClick" type="ghost">切换复选框位置</my-button>
+    <text class="title">单个</text>
+    <my-checkbox value="{{animal}}" disabled="{{disabled}}" checked="{{checked}}"
+                 onchange="handleAnimalChange"></my-checkbox>
+    <my-button onclick="handleDisabled" type="ghost">切换disabled状态</my-button>
+  </div>
+</template>
+<style lang="less">
+  @import "~apex-ui/components/styles/base";
+
+  .wrap {
+    flex-direction: column;
+    background-color: @background-color-base;
+    .title {
+      margin: 20px;
+    }
+  }
+</style>
+<script>
+    export default {
+        data() {
+            return {
+                fruit: [{
+                    id: 1,
+                    name: '香蕉',
+                    checked: false
+                }, {
+                    id: 2,
+                    name: '苹果',
+                    checked: true
+                }, {
+                    id: 3,
+                    name: '西瓜',
+                    checked: false
+                }, {
+                    id: 4,
+                    name: '葡萄',
+                    checked: false
+                }],
+                current: ['苹果', '葡萄'],
+                position: 'left',
+                animal: '熊猫',
+                checked: false,
+                disabled: false,
+            }
+        },
+        handleFruitChange({detail = {}}) {
+            const index = this.current.indexOf(detail.value);
+            index === -1 ? this.current.push(detail.value) : this.current.splice(index, 1);
+        },
+        handleClick() {
+            this.position = this.position.indexOf('left') !== -1 ? 'right' : 'left';
+        },
+        handleDisabled() {
+            this.disabled = !this.disabled;
+        },
+        handleAnimalChange({detail}) {
+            this.checked = detail.current;
+        },
+    }
+</script>

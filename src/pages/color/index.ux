@@ -1,0 +1,199 @@
+<template>
+  <div class="wrap column">
+    <div class="type">
+      <text>主色</text>
+    </div>
+    <div class="color primary-bg column">
+      <div class="color-title">
+        <text>Primary</text>
+      </div>
+      <div class="color-label">
+        <text>#2d8cf0</text>
+      </div>
+    </div>
+    <div class="color light-primary-bg column">
+      <div class="color-title">
+        <text>Light Primary</text>
+      </div>
+      <div class="color-label">
+        <text>#5cadff</text>
+      </div>
+    </div>
+    <div class="color dark-primary-bg column">
+      <div class="color-title">
+        <text>Dark Primary</text>
+      </div>
+      <div class="color-label">
+        <text>#2b85e4</text>
+      </div>
+    </div>
+    <div class="type">
+      <text>辅助色</text>
+    </div>
+    <div class="color success-bg column">
+      <div class="color-title">
+        <text>Success</text>
+      </div>
+      <div class="color-label">
+        <text>#19be6b</text>
+      </div>
+    </div>
+    <div class="color warning-bg column">
+      <div class="color-title">
+        <text>Warning</text>
+      </div>
+      <div class="color-label">
+        <text>#ff9900</text>
+      </div>
+    </div>
+    <div class="color error-bg column">
+      <div class="color-title">
+        <text>Error</text>
+      </div>
+      <div class="color-label">
+        <text>#ed3f14</text>
+      </div>
+    </div>
+    <div class="type">
+      <text>中性色</text>
+    </div>
+    <div class="color title-bg column">
+      <div class="color-title">
+        <text>标题 title</text>
+      </div>
+      <div class="color-label">
+        <text>#1c2438</text>
+      </div>
+    </div>
+    <div class="color content-bg column">
+      <div class="color-title">
+        <text>正文 content</text>
+      </div>
+      <div class="color-label">
+        <text>#495060</text>
+      </div>
+    </div>
+    <div class="color sub-color-bg column">
+      <div class="color-title">
+        <text>辅助 sub-color</text>
+      </div>
+      <div class="color-label">
+        <text>#ed3f14</text>
+      </div>
+    </div>
+    <div class="color disabled-bg column">
+      <div class="color-title">
+        <text>失效 disabled</text>
+      </div>
+      <div class="color-label">
+        <text>#bbbec4</text>
+      </div>
+    </div>
+    <div class="color border-bg column">
+      <div class="color-title">
+        <text style="color: #495060;">边框 border</text>
+      </div>
+      <div class="color-label">
+        <text style="color: #495060;">#dddee1</text>
+      </div>
+    </div>
+    <div class="color divider-bg column">
+      <div class="color-title">
+        <text style="color: #495060;">分割线 divider</text>
+      </div>
+      <div class="color-label">
+        <text style="color: #495060;">#e9eaec</text>
+      </div>
+    </div>
+    <div class="color background-bg column">
+      <div class="color-title">
+        <text style="color: #495060;">背景 background</text>
+      </div>
+      <div class="color-label">
+        <text style="color: #495060;">#f8f8f9</text>
+      </div>
+    </div>
+  </div>
+</template>
+<style lang="less">
+  @import '~apex-ui/components/styles/base.less';
+
+  .primary-bg {
+    background-color: @primary-color;
+  }
+
+  .light-primary-bg {
+    background-color: #5cadff;
+  }
+
+  .dark-primary-bg {
+    background-color: #2b85e4;
+  }
+
+  .success-bg {
+    background-color: @success-color;
+  }
+
+  .warning-bg {
+    background-color: @warning-color;
+  }
+
+  .error-bg {
+    background-color: @error-color;
+  }
+
+  .title-bg {
+    background-color: @title-color;
+  }
+
+  .content-bg {
+    background-color: @text-color;
+  }
+
+  .sub-color-bg {
+    background-color: @subsidiary-color;
+  }
+
+  .disabled-bg {
+    background-color: @btn-disable-color;
+  }
+
+  .border-bg {
+    background-color: @border-color-base;
+  }
+
+  .divider-bg {
+    background-color: @border-color-split;
+  }
+
+  .background-bg {
+    background-color: @background-color-base;
+  }
+
+  .column {
+    flex-direction: column;
+  }
+
+  .wrap {
+    padding: 20px;
+    .type {
+      padding-bottom: 20px;
+      text {
+        font-size: 30px;
+      }
+    }
+    .color {
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+      text {
+        color: #ffffff;
+      }
+    }
+  }
+</style>
+<script>
+    export default {
+        data: {}
+    }
+</script>

@@ -1,0 +1,50 @@
+<import name="my-segmented-control" src="apex-ui/components/segmented-control/index.ux"></import>
+
+<template>
+    <div class="wrap">
+        <div class="sub-title"><text>默认</text></div>
+        <my-segmented-control values="{{ segments2 }}" ></my-segmented-control>
+        <div class="sub-title"><text>主题色</text></div>
+        <my-segmented-control theme="light" values="{{ segments2 }}"></my-segmented-control>
+        <my-segmented-control theme="stable" values="{{ segments2 }}" ></my-segmented-control>
+        <my-segmented-control theme="positive" values="{{ segments2 }}" ></my-segmented-control>
+        <my-segmented-control theme="calm" values="{{ segments2 }}" ></my-segmented-control>
+        <my-segmented-control theme="balanced" values="{{ segments2 }}" ></my-segmented-control>
+        <my-segmented-control theme="energized" values="{{ segments2 }}" ></my-segmented-control>
+        <my-segmented-control theme="assertive" values="{{ segments2 }}" ></my-segmented-control>
+        <my-segmented-control theme="royal" values="{{ segments2 }}" ></my-segmented-control>
+        <my-segmented-control theme="dark" values="{{ segments2 }}" ></my-segmented-control>
+        <div class="sub-title"><text>禁用</text></div>
+        <my-segmented-control disabled values="{{ segments2 }}" ></my-segmented-control>
+        <div class="sub-title"><text>默认当前页</text></div>
+        <my-segmented-control current="{{currentPage}}" values="{{ segments3 }}" onchange="changePage"></my-segmented-control>
+    </div>
+</template>
+<style lang="less">
+.wrap {
+  flex-direction: column;
+  padding: 20px;
+  .sub-title {
+    margin: 20px 0;
+  }
+}
+</style>
+<script>
+export default {
+    data() {
+        return {
+            currentPage: 1,
+            segments2: [
+              'Segment1', 'Segment2'
+            ],
+            segments3: [
+              'Segment1', 'Segment2', 'Segment3'
+            ],
+        }
+    },
+    changePage(e) {
+        console.log(e.detail.index)
+        this.currentPage = e.detail.index
+    }
+}
+</script>

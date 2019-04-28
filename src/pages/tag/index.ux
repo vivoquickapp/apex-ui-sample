@@ -1,0 +1,52 @@
+<import name="my-tag" src="apex-ui/components/tag/index.ux"></import>
+
+<template>
+    <div class="wrap">
+        <div class="sub-title"><text>Default</text></div>
+        <div class="tags-box">
+          <my-tag>default</my-tag>
+          <my-tag color="magenta">magenta</my-tag>
+          <my-tag color="red">red</my-tag>
+          <my-tag color="volcano">volcano</my-tag>
+          <my-tag color="orange">orange</my-tag>
+          <my-tag color="gold">gold</my-tag>
+          <my-tag color="lime">lime</my-tag>
+          <my-tag color="green">green</my-tag>
+          <my-tag color="cyan">cyan</my-tag>
+          <my-tag color="blue">blue</my-tag>
+          <my-tag color="geekblue">geekblue</my-tag>
+          <my-tag color="pink">pink</my-tag>
+          <my-tag color="pink-inverse">pink-inverse</my-tag>
+          <my-tag color="yellow">yellow</my-tag>
+        </div>
+        <div class="sub-title"><text>Custom color</text></div>
+        <my-tag color="#f50">#f50</my-tag>
+        <my-tag color="#2db7f5">#2db7f5</my-tag>
+        <my-tag color="#87d068">#87d068</my-tag>
+        <my-tag color="#108ee9">#108ee9</my-tag>
+        <div class="sub-title"><text>Closable</text></div>
+        <my-tag closable>Tag 1</my-tag>
+        <my-tag closable>Tag 3</my-tag>
+        <my-tag>Toggle</my-tag>
+    </div>
+</template>
+<style lang="less">
+.wrap {
+  flex-direction: column;
+  padding: 20px;
+  .tags-box {
+    flex-wrap: wrap;
+  }
+  .sub-title {
+    margin: 20px 0;
+  }
+}
+</style>
+<script>
+export default {
+  data() {
+    return {
+    }
+  }
+}
+</script>

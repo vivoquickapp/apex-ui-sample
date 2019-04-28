@@ -1,0 +1,197 @@
+{
+  "package": "com.apex.ui.quickapp",
+  "name": "apex-ui",
+  "versionName": "1.0.0",
+  "versionCode": "1",
+  "minPlatformVersion": "1020",
+  "icon": "/images/logo-d.png",
+  "features": [
+    {
+      "name": "system.prompt"
+    },
+    {
+      "name": "system.router"
+    },
+    {
+      "name": "system.shortcut"
+    }
+  ],
+  "permissions": [
+    {
+      "origin": "*"
+    }
+  ],
+  "config": {
+    "logLevel": "debug"
+  },
+  "router": {
+    "entry": "pages/home",
+    "pages": {
+      "pages/home": {
+        "component": "index"
+      },
+      "pages/color": {
+        "component": "index"
+      },
+      "pages/icon": {
+        "component": "index"
+      },
+      "pages/button": {
+        "component": "index"
+      },
+      "pages/input": {
+        "component": "index"
+      },
+      "pages/input-number": {
+        "component": "index"
+      },
+      "pages/radio": {
+        "component": "index"
+      },
+      "pages/checkbox": {
+        "component": "index"
+      },
+      "pages/navbar": {
+        "component": "index"
+      },
+      "pages/pagination": {
+        "component": "index"
+      },
+      "pages/segmented-control": {
+        "component": "index"
+      },
+      "pages/tabbar": {
+        "component": "index"
+      },
+      "pages/divider": {
+        "component": "index"
+      },
+      "pages/switch": {
+        "component": "index"
+      },
+      "pages/rating": {
+        "component": "index"
+      },
+      "pages/alert": {
+        "component": "index"
+      },
+      "pages/prompt": {
+        "component": "index"
+      },
+      "pages/avatar": {
+        "component": "index"
+      },
+      "pages/card": {
+        "component": "index"
+      },
+      "pages/message": {
+        "component": "index"
+      },
+      "pages/toast": {
+        "component": "index"
+      },
+      "pages/load-more": {
+        "component": "index"
+      }
+    }
+  },
+  "display": {
+    "titleBarBackgroundColor": "#f2f2f2",
+    "titleBarTextColor": "#414141",
+    "menu": true,
+    "pages": {
+      "pages/home": {
+        "titleBarText": "apex组件示例",
+        "menu": false
+      },
+      "pages/color": {
+        "titleBarText": "推荐色彩 color",
+        "menu": false
+      },
+      "pages/icon": {
+        "titleBarText": "图标 icon",
+        "menu": false
+      },
+      "pages/button": {
+        "titleBarText": "按钮 button",
+        "menu": false
+      },
+      "pages/navbar": {
+        "titleBarText": "导航栏 navbar",
+        "menu": false
+      },
+      "pages/input": {
+        "titleBarText": "文本输入框 input",
+        "menu": false
+      },
+      "pages/input-number": {
+        "titleBarText": "数字输入框 input-number",
+        "menu": false
+      },
+      "pages/tabbar": {
+        "titleBarText": "标签栏 tabbar",
+        "menu": false
+      },
+      "pages/divider": {
+        "titleBarText": "分隔符 divider",
+        "menu": false
+      },
+      "pages/pagination": {
+        "titleBarText": "分页器 pagination",
+        "menu": false
+      },
+      "pages/tag": {
+        "titleBarText": "标签 tag",
+        "menu": false
+      },
+      "pages/segmented-control": {
+        "titleBarText": "分段器 segmentedControl",
+        "menu": false
+      },
+      "pages/radio": {
+        "titleBarText": "单选框 radio",
+        "menu": false
+      },
+      "pages/checkbox": {
+        "titleBarText": "复选框 checkbox",
+        "menu": false
+      },
+      "pages/switch": {
+        "titleBarText": "滑动按钮 switch",
+        "menu": false
+      },
+      "pages/rating": {
+        "titleBarText": "评分 rating",
+        "menu": false
+      },
+      "pages/alert": {
+        "titleBarText": "警告提示 alert",
+        "menu": false
+      },
+      "pages/prompt": {
+        "titleBarText": "提示消息 prompt",
+        "menu": false
+      },
+      "pages/avatar": {
+        "titleBarText": "头像 avatar",
+        "menu": false
+      },
+      "pages/card": {
+        "titleBarText": "卡片 card",
+        "menu": false
+      },
+      "pages/message": {
+        "titleBarText": "全局提示 message",
+        "menu": false
+      },
+      "pages/toast": {
+        "titleBarText": "提示框 toast",
+        "menu": false
+      },
+      "pages/load-more": {
+        "titleBarText": "底部提示 loadMore",
+        "menu": false
+      }
+    }
+  }
+}

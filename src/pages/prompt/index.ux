@@ -1,0 +1,26 @@
+<import name="my-prompt" src="apex-ui/components/prompt/index.ux"></import>
+<import name="my-toast" src="apex-ui/components/toast/index.ux"></import>
+<template>
+  <div class="wrap">
+    <my-prompt title="消息提醒" text="提醒你有事情发生了" image="/images/logo-d.png" buttons="{{ buttons }}" ontap="tapHandler"></my-prompt>
+    <my-toast id="toast"></my-toast>
+  </div>
+</template>
+<style lang="less"></style>
+<script>
+    export default {
+        data() {
+            return {
+                buttons: [
+                    {text: '按钮1', size: 24},
+                    {text: '按钮2', size: 36, disabled: true}
+                ]
+            }
+        },
+        tapHandler(e) {
+            this.$child('toast').showToast({
+                content: '点击的按钮是：' + e.detail.value.text
+            })
+        }
+    }
+</script>

@@ -1,0 +1,47 @@
+<import name="my-switch" src="apex-ui/components/switch/index.ux"></import>
+
+<template>
+  <div class="wrap">
+    <div class="line">
+      <text>基本用法</text>
+      <my-switch value="true" onchange="changeHandler"></my-switch>
+    </div>
+    <div class="line">
+      <text>自定义内容</text>
+      <my-switch open="open" close="关闭"></my-switch>
+    </div>
+    <div class="line">
+      <text>图标</text>
+      <my-switch open="&#xe975;"></my-switch>
+    </div>
+    <div class="line">
+      <text>禁止切换</text>
+      <my-switch disabled="true"></my-switch>
+    </div>
+  </div>
+</template>
+<style lang="less">
+  .wrap {
+    flex-direction: column;
+    .line {
+      flex-direction: row;
+      justify-content: space-between;
+      height: 100px;
+      border-bottom-color: #bbbec4;
+      border-bottom-width: 1px;
+      width: 100%;
+      align-items: center;
+      padding: 0 20px;
+    }
+  }
+</style>
+<script>
+    export default {
+        data() {
+            return {}
+        },
+        changeHandler(e) {
+            console.log('switch changed!', e);
+        }
+    }
+</script>

@@ -1,0 +1,43 @@
+<import name="my-input-number" src="apex-ui/components/input-number/index"></import>
+<template>
+  <div class="wrap">
+    <div class="panel">
+      <text class="title">基础用法</text>
+      <my-input-number min="0" max="100" onchange="changeHandler1"></my-input-number>
+    </div>
+    <div class="panel">
+      <text class="title">小数</text>
+      <my-input-number min="0" max="100" step="0.2" onchange="changeHandler2"></my-input-number>
+    </div>
+  </div>
+</template>
+<style lang="less">
+  .wrap {
+    flex-direction: column;
+    .panel {
+      padding: 20px;
+      flex-direction: column;
+      .title {
+        margin-bottom: 20px;
+      }
+    }
+  }
+</style>
+<script>
+    export default {
+        data() {
+            return {
+                value1: 1,
+                value2: 0.1
+            }
+        },
+        changeHandler1({detail}) {
+            console.log('number changed', detail);
+            this.value1 = detail.value;
+        },
+        changeHandler2({detail}) {
+            console.log('number changed', detail);
+            this.value2 = detail.value;
+        }
+    }
+</script>

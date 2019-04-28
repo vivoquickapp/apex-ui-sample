@@ -1,0 +1,44 @@
+<import name="my-rating" src="apex-ui/components/rating/index.ux"></import>
+
+<template>
+  <div class="wrap">
+    <div class="line">
+      <text>基本用法</text>
+      <my-rating icon="&#xe912;" value="3" onchange="changeHandler"></my-rating>
+    </div>
+    <div class="line">
+      <text>自定义星星个数</text>
+      <my-rating icon="&#xe941;" count="10" value="3" onchange="changeHandler"></my-rating>
+    </div>
+    <div class="line">
+      <text>自定义星星大小</text>
+      <my-rating icon="&#xe912;" size="80" value="1" onchange="changeHandler"></my-rating>
+    </div>
+    <div class="line">
+      <text>禁用点击</text>
+      <my-rating icon="&#xe912;" disabled="true" value="2"></my-rating>
+    </div>
+  </div>
+</template>
+<style lang="less">
+  .wrap {
+    flex-direction: column;
+    .line {
+      flex-direction: column;
+      border-bottom-color: #bbbec4;
+      border-bottom-width: 1px;
+      width: 100%;
+      padding: 20px;
+    }
+  }
+</style>
+<script>
+    export default {
+        data() {
+            return {}
+        },
+        changeHandler(e) {
+            console.log(`点击了评分，目前分数是${e.detail}!`);
+        }
+    }
+</script>

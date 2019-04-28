@@ -1,0 +1,68 @@
+<import name="my-radio" src="apex-ui/components/radio/index"></import>
+<import name="my-radio-group" src="apex-ui/components/radio-group/index"></import>
+<import name="my-button" src="apex-ui/components/button/index"></import>
+<template>
+  <div class="wrap">
+    <text class="title">组合</text>
+    <my-radio-group id="myGroup" current="{{current}}" onchange="handleFruitChange">
+      <my-radio group="myGroup" for="{{fruit}}" position="{{position}}" value="{{$item.name}}"></my-radio>
+    </my-radio-group>
+    <my-button onclick="handleClick" type="ghost">切换单选框位置</my-button>
+    <text class="title">单个</text>
+    <my-radio value="{{animal}}" disabled="{{disabled}}" checked="{{checked}}" onchange="handleAnimalChange"></my-radio>
+    <my-button onclick="handleDisabled" type="ghost">切换disabled状态</my-button>
+  </div>
+</template>
+<style lang="less">
+  @import "~apex-ui/components//styles/base";
+
+  .wrap {
+    flex-direction: column;
+    background-color: @background-color-base;
+    .title {
+      margin: 20px;
+    }
+  }
+</style>
+<script>
+    export default {
+        data() {
+            return {
+                fruit: [{
+                    id: 1,
+                    name: '香蕉',
+                    checked: false
+                }, {
+                    id: 2,
+                    name: '苹果',
+                    checked: true
+                }, {
+                    id: 3,
+                    name: '西瓜',
+                    checked: false
+                }, {
+                    id: 4,
+                    name: '葡萄',
+                    checked: false
+                }],
+                current: '苹果',
+                position: 'left',
+                animal: '熊猫',
+                checked: false,
+                disabled: false,
+            }
+        },
+        handleFruitChange({detail}) {
+            this.current = detail.value;
+        },
+        handleClick() {
+            this.position = this.position.indexOf('left') !== -1 ? 'right' : 'left';
+        },
+        handleDisabled() {
+            this.disabled = !this.disabled;
+        },
+        handleAnimalChange({detail}) {
+            this.checked = detail.current;
+        },
+    }
+</script>

@@ -1,0 +1,47 @@
+<import name="my-navbar" src="apex-ui/components/navbar/index"></import>
+<import name="my-toast" src="apex-ui/components/toast/index"></import>
+<template>
+  <div class="wrap">
+    <text class="title">默认</text>
+    <my-navbar title="导航标题" left-text=" < " right-text="···" ontap="click"></my-navbar>
+    <text class="title">自定义</text>
+    <my-navbar left-text=" < " right-text="···" ontap="click">
+      <text>自定义导航标题</text>
+    </my-navbar>
+    <text class="title">内置主题</text>
+    <my-navbar theme="dark" title="导航标题" left-text=" < " right-text="···" ontap="click"></my-navbar>
+    <my-navbar theme="calm" title="导航标题" left-text=" < " right-text="···" ontap="click"></my-navbar>
+    <my-navbar theme="royal" title="导航标题" left-text=" < " right-text="···" ontap="click"></my-navbar>
+    <my-navbar theme="positive" title="导航标题" left-text=" < " right-text="···" ontap="click"></my-navbar>
+    <my-toast id="toast"></my-toast>
+  </div>
+</template>
+<style lang="less">
+  .wrap {
+    flex-direction: column;
+    background-color: #f7f7f7;
+    .title {
+      margin: 20px;
+    }
+  }
+</style>
+<script>
+    export default {
+        data() {
+            return {}
+        },
+        click(e) {
+            console.log(e.detail.type);
+            if (e.detail.type === 'right') {
+                this.$child('toast').showToast({
+                    content: '你点击的是右边！'
+                })
+            }
+            if (e.detail.type === 'left') {
+                this.$child('toast').showToast({
+                    content: '你点击的是左边！'
+                })
+            }
+        }
+    }
+</script>

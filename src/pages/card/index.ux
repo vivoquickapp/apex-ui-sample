@@ -1,0 +1,32 @@
+<import name="my-card" src="apex-ui/components/card/index"></import>
+<template>
+  <div class="wrap">
+    <text class="title">默认</text>
+    <my-card title="卡片标题" thumb="/images/logo-d.png" extra="额外内容" footer="卡片底部">
+      <text>卡片内容</text>
+    </my-card>
+    <text class="title">通栏</text>
+    <my-card title="卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题" full="true" thumb="/images/logo-d.png" extra="额外内容" footer="卡片底部">
+      <text class="demo">卡片内容</text>
+    </my-card>
+  </div>
+</template>
+<style lang="less">
+  .wrap {
+    background-color: #f7f7f7;
+    flex-direction: column;
+    .title {
+      padding: 20px;
+    }
+  }
+  .demo{
+    font-size: 100px;
+  }
+</style>
+<script>
+    export default {
+        data() {
+
+        }
+    }
+</script>

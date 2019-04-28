@@ -1,0 +1,24 @@
+<import name="my-load-more" src="apex-ui/components/load-more/index"></import>
+<template>
+  <div class="wrap">
+    <my-load-more></my-load-more>
+    <my-load-more tip="暂无数据" loading="{{ false }}"></my-load-more>
+    <my-load-more loading="{{ false }}"></my-load-more>
+  </div>
+</template>
+<style lang="less">
+  .wrap {
+    flex-direction: column;
+    padding: 20px;
+    .title {
+      margin: 20px;
+    }
+  }
+</style>
+<script>
+    export default {
+        data() {
+            return {}
+        }
+    }
+</script>

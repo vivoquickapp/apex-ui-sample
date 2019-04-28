@@ -1,0 +1,82 @@
+<import name="my-toast" src="apex-ui/components/toast/index"></import>
+<import name="my-button" src="apex-ui/components/button/index.ux"></import>
+
+<template>
+  <div class="wrap">
+    <my-button type="ghost" ontap="handleText">只显示文本</my-button>
+    <my-button type="ghost" ontap="handleSuccess">成功</my-button>
+    <my-button type="ghost" ontap="handleWarning">警告</my-button>
+    <my-button type="ghost" ontap="handleError">错误</my-button>
+    <my-button type="ghost" ontap="handleLoading">Loading</my-button>
+    <my-button type="ghost" ontap="handleIcon">使用图标</my-button>
+    <my-button type="ghost" ontap="handleImage">使用自定义图片</my-button>
+    <my-button type="ghost" ontap="handleMask">无遮罩层</my-button>
+
+    <my-toast id="toast"></my-toast>
+  </div>
+</template>
+<style lang="less">
+  .wrap {
+    flex-direction: column;
+    padding-top: 100px;
+  }
+</style>
+<script>
+    export default {
+        data() {
+        },
+        handleText() {
+            this.$child('toast').showToast({
+                content: '这是文本提示'
+            });
+        },
+        handleSuccess() {
+            this.$child('toast').showToast({
+                content: '成功的提示',
+                type: 'success'
+            });
+        },
+        handleWarning() {
+            this.$child('toast').showToast({
+                content: '警告的提示',
+                type: 'warning'
+            });
+        },
+        handleError() {
+            this.$child('toast').showToast({
+                content: '错误的提示',
+                type: 'error'
+            });
+        },
+        handleLoading() {
+            this.$child('toast').showToast({
+                content: '加载中',
+                type: 'loading'
+            });
+        },
+        handleIcon() {
+            this.$child('toast').showToast({
+                content: '使用内置的图标',
+                icon: 'thumbs-up'
+            });
+        },
+        handleImage() {
+            this.$child('toast').showToast({
+                content: '使用自定义图片',
+                image: 'https://quickapp.vivo.com.cn/content/images/size/w1000/2019/03/quickapp-logo-4.png'
+            });
+        },
+        handleMask() {
+            const _this = this;
+            this.$child('toast').showToast({
+                content: '5秒后自动关闭',
+                icon: 'woman',
+                duration: 0,
+                mask: false
+            });
+            setTimeout(() => {
+                _this.$child('toast').hideToast();
+            }, 5000);
+        },
+    }
+</script>

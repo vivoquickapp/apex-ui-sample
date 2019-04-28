@@ -1,0 +1,101 @@
+<template>
+  <div class="wrap">
+    <div class="logo">
+      <image src="../../images/logo.png"></image>
+    </div>
+    <div class="type">
+      <text>基础组件</text>
+    </div>
+    <div class="component">
+      <div class="item"><a href="/pages/color">色彩 color</a></div>
+      <div class="item"><a href="/pages/icon">图标 icon</a></div>
+      <div class="item"><a href="/pages/button">按钮 button</a></div>
+    </div>
+    <div class="type">
+      <text>导航组件</text>
+    </div>
+    <div class="component">
+      <div class="item"><a href="/pages/navbar">导航栏 navbar</a></div>
+      <div class="item"><a href="/pages/tabbar">标签栏 tabbar</a></div>
+      <div class="item"><a href="/pages/pagination">分页器 pagination</a></div>
+      <div class="item"><a href="/pages/segmented-control">分段器 segmented-control</a></div>
+    </div>
+    <div class="type">
+      <text>表单数据</text>
+    </div>
+    <div class="component">
+      <div class="item"><a href="/pages/input">文本输入框 input</a></div>
+      <div class="item"><a href="/pages/input-number">数字输入框 input-number</a></div>
+      <div class="item"><a href="/pages/radio">单选框 radio</a></div>
+      <div class="item"><a href="/pages/checkbox">复选框 checkbox</a></div>
+      <div class="item"><a href="/pages/switch">滑动按钮 switch</a></div>
+      <div class="item"><a href="/pages/rating">评分 rating</a></div>
+    </div>
+     <div class="type">
+      <text>数据展示</text>
+    </div>
+    <div class="component">
+      <div class="item"><a href="/pages/alert">警告提示 alert</a></div>
+      <div class="item"><a href="/pages/prompt">提示消息 prompt</a></div>
+      <div class="item"><a href="/pages/avatar">头像 avatar</a></div>
+      <div class="item"><a href="/pages/card">卡片 card</a></div>
+      <div class="item"><a href="/pages/divider">分隔符 divider</a></div>
+    </div>
+    <div class="type">
+      <text>操作反馈</text>
+    </div>
+    <div class="component">
+      <div class="item"><a href="/pages/message">全局提示 message</a></div>
+      <div class="item"><a href="/pages/toast">提示框 toast</a></div>
+      <div class="item"><a href="/pages/load-more">页底提示 loadMore</a></div>
+    </div>
+  </div>
+</template>
+<style lang="less">
+.wrap {
+  flex-direction: column;
+  background-color: #f7f7f7;
+  .logo {
+    justify-content: center;
+    padding: 50px 0;
+    image {
+      height: 100px;
+    }
+  }
+  .type {
+    padding: 20px;
+  }
+  .component {
+    background-color: #ffffff;
+    border-style: solid;
+    border-top-width: 1px;
+    border-top-color: #dddee1;
+    border-bottom-width: 1px;
+    flex-direction: column;
+    .item {
+      height: 100px;
+      justify-content: space-between;
+      margin-left: 20px;
+      border-bottom-width: 1px;
+      border-bottom-color: #dddee1;
+      border-style: solid;
+      a {
+        width: 100%;
+      }
+      a :active {
+        width: 100%;
+      }
+    }
+  }
+}
+</style>
+<script>
+export default {
+  data() {
+      return {}
+  },
+  onInit() {
+    console.log('home page init!!')
+  },
+}
+</script>

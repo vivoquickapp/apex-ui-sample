@@ -1,0 +1,56 @@
+<import name="my-message" src="apex-ui/components/message/index"></import>
+<import name="my-button" src="apex-ui/components/button/index.ux"></import>
+
+<template>
+  <div class="wrap">
+    <my-button ontap="handleDefault">默认提醒</my-button>
+    <my-button ontap="handleSuccess">成功提醒</my-button>
+    <my-button ontap="handleWarning">警告提醒</my-button>
+    <my-button ontap="handleError">错误提醒</my-button>
+    <my-button ontap="handleDuration">自定义持续时间</my-button>
+    <my-message id="message"></my-message>
+  </div>
+</template>
+<style lang="less">
+  .wrap {
+    flex-direction: column;
+    padding-top: 100px;
+  }
+</style>
+<script>
+    export default {
+        data() {
+
+        },
+        handleDefault() {
+            this.$child('message').showMessage({
+                content: '这是一条普通提醒'
+            });
+        },
+        handleSuccess() {
+            this.$child('message').showMessage({
+                content: '这是一条成功提醒',
+                type: 'success'
+            });
+        },
+        handleWarning() {
+            this.$child('message').showMessage({
+                content: '这是一条警告提醒',
+                type: 'warning'
+            });
+        },
+        handleError() {
+            this.$child('message').showMessage({
+                content: '这是一条错误提醒',
+                type: 'error'
+            });
+        },
+        handleDuration() {
+            this.$child('message').showMessage({
+                content: '我将在 5 秒后消失',
+                duration: 5,
+                bgColor: 'yellow'
+            });
+        }
+    }
+</script>

@@ -1,0 +1,33 @@
+<import name="my-alert" src="apex-ui/components/alert/index.ux"></import>
+<template>
+  <div class="wrap">
+    <my-alert title="An alert info" type="info"></my-alert>
+    <my-alert title="An alert info" type="success"></my-alert>
+    <my-alert title="An alert info" type="warning"></my-alert>
+    <my-alert title="An alert info" type="error"></my-alert>
+    <my-alert title="An alert info" desc="Some description about alert component" type="info"></my-alert>
+    <my-alert title="An alert info" desc="Some description about alert component" type="success"></my-alert>
+    <my-alert title="An alert info" desc="Some description about alert component" type="warning"></my-alert>
+    <my-alert title="An alert info" desc="Some description about alert component" type="error"></my-alert>
+    <my-alert title="An alert info" show-icon="true" type="info"></my-alert>
+    <my-alert title="An alert info" show-icon="true" type="success"></my-alert>
+    <my-alert title="An alert info" show-icon="true" type="warning"></my-alert>
+    <my-alert title="An alert info" show-icon="true" type="error"></my-alert>
+    <my-alert title="An alert info" show-icon="true" desc="Some description about alert component" type="info"></my-alert>
+    <my-alert title="An alert info" show-icon="true" desc="Some description about alert component" type="success"></my-alert>
+    <my-alert title="An alert info" show-icon="true" desc="Some description about alert component" type="warning"></my-alert>
+    <my-alert title="An alert info" show-icon="true" desc="Some description about alert component" type="error"></my-alert>
+    <my-alert title="An alert info" closable="true" type="info"></my-alert>
+    <my-alert title="An alert info" closable="true" show-icon="true" desc="Some description about alert component" type="success"></my-alert>
+  </div>
+</template>
+<style lang="less">
+  .wrap {
+    flex-direction: column;
+  }
+</style>
+<script>
+    export default {
+
+    }
+</script>

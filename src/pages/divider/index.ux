@@ -1,0 +1,30 @@
+<import name="my-divider" src="apex-ui/components/divider/index"></import>
+<template>
+  <div class="wrap">
+    <text class="title">基本用法</text>
+    <my-divider content="加载已经完成,没有其他数据"></my-divider>
+    <my-divider content="加载已经完成,没有其他数据" color="#2d8cf0" line-color="#2d8cf0"></my-divider>
+    <my-divider content="加载已经完成,没有其他数据" line-color="#2d8cf0"></my-divider>
+    <my-divider content="加载已经完成,没有其他数据" color="#ed3f14" line-color="#ed3f14"></my-divider>
+    <my-divider content="加载已经完成,没有其他数据" color="#ff9900" line-color="#ff9900"></my-divider>
+    <text class="title">自定义内容</text>
+    <my-divider color="#2d8cf0" line-color="#2d8cf0"><text>加载已经完成,没有其他数据</text></my-divider>
+    <my-divider color="#ed3f14" line-color="#ed3f14"><text>加载已经完成,没有其他数据</text></my-divider>
+  </div>
+</template>
+<style lang="less">
+  .wrap {
+    flex-direction: column;
+    flex-wrap: wrap;
+    .title {
+      margin: 20px;
+    }
+  }
+</style>
+<script>
+    export default {
+        data() {
+            return {}
+        }
+    }
+</script>
