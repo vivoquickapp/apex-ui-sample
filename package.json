@@ -2,9 +2,9 @@
   "name": "apex-ui-sample",
   "version": "1.0.0",
   "subversion": {
-    "toolkit": "0.4.3"
+    "toolkit": "0.4.7"
   },
-  "description": "",
+  "description": "apex-ui components sample quickapp",
   "scripts": {
     "build": "hap build",
     "release": "hap release",
@@ -12,12 +12,12 @@
     "watch": "hap watch"
   },
   "devDependencies": {
+    "apex-ui": "file:../apex-ui",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.12.1",
     "eslint-plugin-hybrid": "0.0.5",
-    "hap-toolkit": "^0.4.3",
+    "hap-toolkit": "^0.4.7",
     "less": "^3.9.0",
-    "less-loader": "^4.1.0",
-    "apex-ui": "^1.0.0"
+    "less-loader": "^4.1.0"
   }
 }

@@ -12,6 +12,9 @@
     <my-checkbox value="{{animal}}" disabled="{{disabled}}" checked="{{checked}}"
                  onchange="handleAnimalChange"></my-checkbox>
     <my-button onclick="handleDisabled" type="ghost">切换disabled状态</my-button>
+    <text class="title">形状</text>
+    <my-checkbox value="{{animal}}" shape="square" disabled="{{disabled}}" checked="{{checked}}"
+                 onchange="handleAnimalChange"></my-checkbox>
   </div>
 </template>
 <style lang="less">

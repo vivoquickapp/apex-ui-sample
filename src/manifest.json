@@ -63,6 +63,12 @@
       "pages/tabbar": {
         "component": "index"
       },
+      "pages/tabbar/page1": {
+        "component": "index"
+      },
+      "pages/tabbar/page2": {
+        "component": "index"
+      },
       "pages/divider": {
         "component": "index"
       },
@@ -130,6 +136,14 @@
       },
       "pages/tabbar": {
         "titleBarText": "标签栏 tabbar",
+        "menu": false
+      },
+      "pages/tabbar/page1": {
+        "titleBarText": "示例页面一",
+        "menu": false
+      },
+      "pages/tabbar/page2": {
+        "titleBarText": "示例页面二",
         "menu": false
       },
       "pages/divider": {

@@ -1,7 +1,7 @@
 <import name="my-tabbar" src="apex-ui/components/tabbar/index"></import>
 <template>
   <div class="wrap">
-    <text>页面1</text>
+    <text>页面2</text>
     <my-tabbar tabbar="{{tabbarData}}"></my-tabbar>
   </div>
 </template>
@@ -17,14 +17,14 @@
                         selectedIconPath: '/images/logo.png',
                         pagePath: '/pages/tabbar',
                         text: 'tab1',
-                        active: true
+                        active: false
                     },
                     {
                         iconPath: '/images/logo-d.png',
                         selectedIconPath: '/images/logo.png',
                         pagePath: '/pages/tabbar/page1',
                         text: 'tab2',
-                        active: false
+                        active: true
                     },
                     {
                         iconPath: '/images/logo-d.png',
