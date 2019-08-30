@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div class="logo">
-      <image src="../../images/logo.png"></image>
+      <image src="../../images/logo-d.png"></image>
     </div>
     <div class="type">
       <text>基础组件</text>
