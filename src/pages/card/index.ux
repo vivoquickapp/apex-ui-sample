@@ -2,12 +2,20 @@
 <template>
   <div class="wrap">
     <text class="title">默认</text>
-    <my-card title="卡片标题" thumb="/images/logo-d.png" extra="额外内容" footer="卡片底部">
-      <text>卡片内容</text>
+    <my-card>
+      <span slot="title">卡片标题</span>
+      <image slot="thumb" src="/images/logo-d.png"></image>
+      <text slot="extra">额外内容</text>
+      <span slot="footer">卡片底部</span>
+      <text>卡片内容slot</text>
     </my-card>
     <text class="title">通栏</text>
-    <my-card title="卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题" full="true" thumb="/images/logo-d.png" extra="额外内容" footer="卡片底部">
-      <text class="demo">卡片内容</text>
+    <my-card full="true">
+      <span slot="title">卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题</span>
+      <image slot="thumb" src="/images/logo-d.png"></image>
+      <text slot="extra">额外内容</text>
+      <span slot="footer">卡片底部</span>
+      <text>卡片内容slot</text>
     </my-card>
   </div>
 </template>
