@@ -1,21 +1,31 @@
 <import name="my-card" src="apex-ui/components/card/index"></import>
+<import name="my-icon" src="apex-ui/components/icon/index"></import>
 <template>
   <div class="wrap">
     <text class="title">默认</text>
-    <my-card>
-      <span slot="title">卡片标题</span>
-      <image slot="thumb" src="/images/logo-d.png"></image>
-      <text slot="extra">额外内容</text>
-      <span slot="footer">卡片底部</span>
-      <text>卡片内容slot</text>
+    <my-card title="卡片标题" thumb="/images/logo-d.png" extra="额外内容" footer="卡片底部">
+      <text>卡片内容</text>
     </my-card>
     <text class="title">通栏</text>
-    <my-card full="true">
-      <span slot="title">卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题</span>
-      <image slot="thumb" src="/images/logo-d.png"></image>
-      <text slot="extra">额外内容</text>
-      <span slot="footer">卡片底部</span>
-      <text>卡片内容slot</text>
+    <my-card title="卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题" full="true" thumb="/images/logo-d.png" extra="额外内容" footer="卡片底部">
+      <text class="demo">卡片内容</text>
+    </my-card>
+    <text class="title">使用slot</text>
+    <my-card use-header-slot="true" title="卡片标题" thumb="/images/logo-d.png" extra="额外内容" footer="卡片底部">
+      <div slot="title">
+        <my-icon type="gift" size="48"></my-icon>
+        <text class="slot-demo-title">礼物清单</text>
+      </div>
+      <div slot="extra" @click="changeRandomGiftList">
+        <my-icon type="refresh" size="48" color="#3086FE"></my-icon>
+        <text style="color:#3086FE ">换一批</text>
+      </div>
+      <list class="slot-demo-list">
+        <list-item class="slot-demo-list-item" type="listItem" for="{{ randomGiftList }}">
+          <text>{{ $item.name }}</text>
+          <text>¥{{ $item.price }}</text>
+        </list-item>
+      </list>
     </my-card>
   </div>
 </template>
@@ -30,11 +40,94 @@
   .demo{
     font-size: 100px;
   }
+  .slot-demo-title{
+    font-size: 35px;
+    color: #1c2438; 
+  }
+  .slot-demo-list{
+    height: 300px;
+    &-item{
+      justify-content: space-between;
+      text{
+        font-size: 35px;
+        padding: 5px 0;
+      }
+    }
+  }
 </style>
 <script>
-    export default {
-        data() {
-
-        }
+export default {
+  data() {
+    return{
+      giftList: [{
+        id: 1,
+        name: '鞋子',
+        price: 300
+      }, {
+        id: 2,
+        name: '衣服',
+        price: 150
+      }, {
+        id: 3,
+        name: '裤子',
+        price: 200
+      }, {
+        id: 4,
+        name: '项链',
+        price: 500
+      }, {
+        id: 5,
+        name: '耳环',
+        price: 100
+      }, {
+        id: 6,
+        name: '巧克力',
+        price: 50
+      }, {
+        id: 7,
+        name: '鲜花',
+        price: 40
+      }, {
+        id: 8,
+        name: '糖果',
+        price: 50
+      }, {
+        id: 9,
+        name: '乐高积木',
+        price: 200
+      }, {
+        id: 10,
+        name: '飞机模型',
+        price: 300
+      }],
+      randomGiftList: []
     }
+  },
+
+  onShow() {
+    this.changeRandomGiftList()
+    console.log(this.randomGiftList)
+  },
+
+  changeRandomGiftList(){
+    function getArrayItems(arr, num) {
+      const tempArray = []
+      for (let index in arr) {
+        tempArray.push(arr[index])
+      }
+      const returnArray = []
+      for (let i = 0; i<num; i++) {
+        if (tempArray.length>0) {
+          const arrIndex = Math.floor(Math.random()*tempArray.length)
+          returnArray[i] = tempArray[arrIndex]
+          tempArray.splice(arrIndex, 1)
+        } else {
+          break
+        }
+      }
+      return returnArray
+    }
+    this.randomGiftList = getArrayItems(this.giftList, 5)
+  }
+}
 </script>
