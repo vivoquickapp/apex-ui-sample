@@ -1,6 +1,7 @@
 .idea/
 .ide/
 .DS_Store
+.vscode
 
 node_modules/
 build/
