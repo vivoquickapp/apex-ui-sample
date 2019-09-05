@@ -19,5 +19,8 @@
     "hap-toolkit": "^0.6.2",
     "less": "^3.9.0",
     "less-loader": "^4.1.0"
-  }
+  },
+  "browserslist": [
+    "chrome 65"
+  ]
 }
