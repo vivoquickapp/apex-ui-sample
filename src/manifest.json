@@ -3,7 +3,7 @@
   "name": "apex-ui",
   "versionName": "1.0.0",
   "versionCode": "1",
-  "minPlatformVersion": "1020",
+  "minPlatformVersion": "1050",
   "icon": "/images/logo-d.png",
   "features": [
     {
