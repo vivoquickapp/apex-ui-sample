@@ -14,21 +14,21 @@
                 tabbarData: [
                     {
                         iconPath: '/images/logo-d.png',
-                        selectedIconPath: '/images/logo.png',
+                        selectedIconPath: '/images/logo-d.png',
                         pagePath: '/pages/tabbar',
                         text: 'tab1',
                         active: false
                     },
                     {
                         iconPath: '/images/logo-d.png',
-                        selectedIconPath: '/images/logo.png',
+                        selectedIconPath: '/images/logo-d.png',
                         pagePath: '/pages/tabbar/page1',
                         text: 'tab2',
                         active: false
                     },
                     {
                         iconPath: '/images/logo-d.png',
-                        selectedIconPath: '/images/logo.png',
+                        selectedIconPath: '/images/logo-d.png',
                         pagePath: '/pages/tabbar/page2',
                         text: 'tab3',
                         active: true
