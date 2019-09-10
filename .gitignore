@@ -2,6 +2,7 @@
 .ide/
 .DS_Store
 .vscode
+src/.DS_Store
 
 node_modules/
 build/

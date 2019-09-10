@@ -11,7 +11,7 @@
       <text class="demo">卡片内容</text>
     </my-card>
     <text class="title">使用slot</text>
-    <my-card use-header-slot="true">
+    <my-card>
       <div slot="title">
         <my-icon type="gift" size="48"></my-icon>
         <text class="slot-demo-title">礼物清单</text>
