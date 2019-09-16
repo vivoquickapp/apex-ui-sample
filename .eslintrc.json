@@ -15,7 +15,7 @@
     "loadData": false,
     "saveData": false,
     "history": false,
-    "console": false,
+    "console": true,
     "setTimeout": false,
     "clearTimeout": false,
     "setInterval": false,
