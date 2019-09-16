@@ -28,30 +28,25 @@
   }
 </style>
 <script>
-    export default {
-        data() {
-            return {
-                value1: 1,
-                value2: 0.1,
-                value3: 0
-            }
-        },
-        changeHandler1({detail}) {
-            console.log('number changed', detail);
-            this.value1 = detail.value;
-        },
-        changeHandler2({detail}) {
-            console.log('number changed', detail);
-            this.value2 = detail.value;
-        },
-        changeHandler3({detail}) {
-            console.log('number changed', detail);
-            this.value3 = detail.value;
-        },
-        click(){
-          console.log(this.value1)
-          console.log(this.value2)
-          console.log(this.value3)
+export default {
+    data() {
+        return {
+            value1: 1,
+            value2: 0.1,
+            value3: 0
         }
+    },
+    changeHandler1({detail}) {
+        console.log('number changed', detail);
+        this.value1 = detail.value;
+    },
+    changeHandler2({detail}) {
+        console.log('number changed', detail);
+        this.value2 = detail.value;
+    },
+    changeHandler3({detail}) {
+        console.log('number changed', detail);
+        this.value3 = detail.value;
     }
+}
 </script>
