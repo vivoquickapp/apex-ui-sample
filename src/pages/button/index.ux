@@ -44,12 +44,12 @@
   }
 </style>
 <script>
-    export default {
-        data() {
-            return {}
-        },
-        tap() {
-            console.log(5555555);
-        }
-    }
+export default {
+  data() {
+    return {}
+  },
+  tap() {
+    console.log(5555555);
+  }
+}
 </script>
