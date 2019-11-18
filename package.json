@@ -12,6 +12,7 @@
     "watch": "hap watch"
   },
   "devDependencies": {
+    "@types/quickapp": "git+https://github.com/vivoquickapp/quickapp-types.git",
     "apex-ui": "latest",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.12.1",

@@ -1,0 +1,150 @@
+<import name="my-dialog" src="apex-ui/components/dialog/index"></import>
+<import name="my-icon" src="apex-ui/components/icon/index"></import>
+ 
+<template>
+  <div class="wrap">
+    <text class="btn" onclick="openDialog1">Default Dialog</text>
+    <text class="btn" onclick="openDialog2">Alter Dialog</text>
+    <text class="btn" onclick="openDialog3">Prompt Dialog</text>
+    <text class="btn" onclick="openDialog4">Custom Dialog</text>
+    <text class="btn" onclick="openDialog5">Vertical Buttons Dialog</text>
+    <my-dialog visible="{{open1}}" title="三秒后自动关闭" content="弹窗内容，告知当前状态、信息和解决方法。详细描述内容：" onaffirm="close" oncancel="close"></my-dialog>
+    <my-dialog visible="{{open2}}" title="冷知识" onclose="close" content="奶牛打嗝会加剧温室效应！" oncancel="close" options="{{opt1}}" dialog-type='alter' onaffirm="close"></my-dialog>
+    <my-dialog visible="{{open3}}" dialog-type='prompt' onaffirm="close" oncancel="close" prompt="{{obj}}" onenter="enter"></my-dialog>
+    <my-dialog visible="{{open4}}" onclick0="btn0" onclick1="btn1" onclick2="btn2" options="{{opt2}}"></my-dialog>
+    <my-dialog visible="{{open5}}" vertical="{{true}}" options="{{opt4}}" onclick0="close" onclick1="close"></my-dialog>
+    <my-dialog visible="{{open6}}" dialog-type='alter' onaffirm="close" options="{{opt3}}"></my-dialog>
+  </div>
+</template>
+
+<script>
+export default {
+  data: {
+    open1: false,
+    open2: false,
+    open3: false,
+    open4: false,
+    open5: false,
+    open6: false,
+    opt1: {},
+    opt2: {},
+    opt3: {},
+    opt4: {},
+    obj: {}
+  },
+  openDialog1() {
+    this.open1 = true
+    setTimeout(() => {
+      this.open1 = false
+    }, 3000);
+  },
+  openDialog2() {
+    this.open2 = true
+    this.opt1 = {
+      closable: true,
+      affirm: '知道了'
+    }
+  },
+  openDialog3() {
+    this.open3 = true
+    this.obj = {
+      title:'提示',
+      content:'请猜出八位数字，按enter键查看结果！',
+      fieldtype: 'password',
+    }
+  },
+  openDialog4() {
+    this.open4 = true
+    this.opt2 = {
+      title: "我是标题",
+      content: "我是自定义对话框",
+      buttons: [
+        {
+          btn: '支付宝支付',
+          style: {
+            color: '#58b4ff',
+          }
+        },
+        {
+          btn: '微信支付',
+          style: {
+            color: '#58b4ff',
+          }
+        },
+        '关闭'
+      ]
+    }
+  },
+  openDialog5() {
+    this.open5 = true
+    this.opt4 = {
+      title: '2选1',
+      content: '下面选项中任选一项',
+      buttons: ['选项1', '选项2']
+    }
+  },
+  close() {
+    this.open1 = false
+    this.open2 = false
+    this.open3 = false
+    this.open4 = false
+    this.open5 = false
+    this.open6 = false
+    this.open7 = false
+  },
+  enter(evt) {
+    this.open3 = false
+    if (evt.detail.event.value === '123456') {
+      console.log(111111)
+      this.opt3 = {
+        title: "提示",
+        content: "密码正确!"
+      }
+      this.open6 = true
+    } else {
+      console.log(222222)
+      this.opt3 = {
+        title: "提示",
+        content: "密码错误!"
+      }
+      this.open6 = true
+    }
+  },
+  btn0(evt) {
+    this.open4 = false
+    this.opt3 = {
+      title: "提示",
+      content: "你选择了支付宝支付!"
+    }
+    this.open6 = true
+  },
+  btn1(evt) {
+    this.open4 = false
+    this.opt3 = {
+      title: "提示",
+      content: "你选择了微信支付!"
+    }
+    this.open6 = true
+  },
+  btn2() {
+    this.open4 = false
+  }
+}
+</script>
+
+<style lang="less">
+.wrap {
+  flex-direction: column;
+  background-color: #f7f7f7;
+  align-items: center;
+  padding-top: 80px;
+  .btn {
+    height: 80px;
+    width: 90%;
+    margin: 10px;
+    background-color: #fff;
+    text-align: center;
+    color: #000000;
+  }
+}
+</style>

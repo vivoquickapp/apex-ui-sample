@@ -1,0 +1,171 @@
+<import name="my-card" src="apex-ui/components/card/index.ux"></import>
+<import name="my-icon" src="apex-ui/components/icon/index.ux"></import>
+<import name="my-calendar" src="apex-ui/components/calendar/index.ux"></import>
+ 
+<template>
+  <div class="wrap">
+    <my-card>
+      <div slot="title">
+        <div class="calendar-title">
+          <my-icon type="time" size="48" color="#11c1f3"></my-icon>
+          <text>单程</text>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="currentDate" onclick="openCalendar('single')">
+          <div class="date">
+            <text class="day">{{singleTrip.month}}月{{singleTrip.day}}日</text>
+            <text class="week">周{{singleTrip.week}}</text>
+          </div>
+          <my-icon type="arrow-fwd" size="32"></my-icon>
+        </div>
+      </div>
+    </my-card>
+    <my-card>
+      <div slot="title">
+        <div class="calendar-title">
+          <my-icon type="time" size="48" color="#11c1f3"></my-icon>
+          <text>联程</text>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="currentDate" onclick="openCalendar('round')">
+          <div class="date">
+            <text class="day">{{roundTrip.start.month}}月{{roundTrip.start.day}}日</text>
+            <text class="week">周{{roundTrip.start.week}}</text>
+          </div>
+          <my-icon type="arrow-fwd" size="32"></my-icon>
+          <div class="date">
+            <text class="day">{{roundTrip.end.month}}月{{roundTrip.end.day}}日</text>
+            <text class="week">周{{roundTrip.end.week}}</text>
+          </div>
+          <my-icon type="arrow-fwd" size="32"></my-icon>
+        </div>
+      </div>
+    </my-card>
+    <my-calendar visible="{{open}}" trip="{{tripType}}" onschedule="getSchedule"></my-calendar>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      currentPage: 0,
+      roundTrip: {},
+      singleTrip: {},
+      open: false,
+      tripType: '',
+      moreTrip: {},
+    }
+  },
+  onInit() {
+    this.sendToComponent()
+  },
+
+  getDateObj() {
+    const date = new Date()
+    let year = date.getFullYear()
+    let month = date.getMonth() + 1
+    let day = date.getDate()
+    let week = date.getDay()
+    const lastDay = new Date(`${year}`, `${month}`, 0).getDate()
+    let obj = {
+      year,
+      month,
+      day,
+      week: this.getWeek(week)
+    }
+    return { obj, lastDay, week }
+  },
+
+  sendToComponent() {
+    let obj = this.getDateObj().obj
+    let lastDay = this.getDateObj().lastDay
+    let week = this.getDateObj().week
+    this.singleTrip = obj
+    let defalutObj = {}
+    if (obj.day + 1 > lastDay) {
+      if (obj.month < 12) {
+        defalutObj.month = obj.month + 1
+      } else {
+        defalutObj.year = obj.year + 1
+        defalutObj.month = 1
+      }
+      defalutObj.day = 1
+    } else {
+      defalutObj = {
+        year: obj.year,
+        month: obj.month,
+        day: obj.day + 1
+      }
+    }
+    week + 1 > 6 ? defalutObj.week = this.getWeek(0) : defalutObj.week = this.getWeek(week + 1)
+    this.roundTrip = {
+      start: obj,
+      end: defalutObj
+    }
+  },
+
+  openCalendar(type) {
+    this.tripType = type
+    this.open = !this.open
+  },
+
+  getWeek(date) {
+    const weekArr = ['日', '一', '二', '三', '四', '五', '六']
+    return weekArr[date]
+  },
+
+  getSchedule(e) {
+    console.log(JSON.parse(e.detail.data))
+    if (this.tripType === 'round') {
+      this.roundTrip = JSON.parse(e.detail.data)
+    }
+    if (this.tripType === 'single') {
+      this.singleTrip = JSON.parse(e.detail.data)
+    }
+  }
+}
+
+</script>
+
+<style lang="less">
+.wrap {
+  align-content: center;
+  width: 100%;
+  flex-direction: column;
+  .calendar-title {
+    width: 100%;
+    padding-left: 20px;
+    align-items: center;
+    text {
+      margin-left: 20px;
+    }
+  }
+  .card-content {
+    width: 100%;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    .currentDate {
+      width: 100%;
+      padding: 20px;
+      justify-content: space-between;
+      align-items: center;
+      .line {
+        height: 1px;
+        width: 80%;
+        background-color: #ff0000;
+      }
+      .date {
+        align-items: flex-end;
+        .week {
+          margin-left: 10px;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+</style>

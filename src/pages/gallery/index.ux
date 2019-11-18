@@ -1,0 +1,88 @@
+<import name="my-gallery" src="apex-ui/components/gallery/index"></import>
+
+<template>
+  <div class="wrap">
+    <text class="title">default</text>
+    <div class="image-wrap">
+      <block for="{{(idx, image) in srcs}}">
+        <image src="{{image}}" onclick="handleClick(idx)"></image>
+      </block>
+    </div>
+    <text class="title">aotoplay</text>
+    <div class="image-wrap">
+      <block for="{{(idx, image) in srcs}}">
+        <image src="{{image}}" onclick="handleClick2(idx)"></image>
+      </block>
+    </div>
+    <text class="title">vertical</text>
+    <div class="image-wrap">
+      <block for="{{(idx, image) in srcs}}">
+        <image src="{{image}}" onclick="handleClick3(idx)"></image>
+      </block>
+    </div>
+    <my-gallery id="gallery"></my-gallery>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      srcs: [
+        '/images/logo-d.png',
+        '/images/logo-d.png',
+        '/images/logo-d.png',
+        '/images/logo-d.png',
+      ],
+    }
+  },
+
+  handleClick(idx, e) {
+    this.$child('gallery').showGallery({
+      srcs: this.srcs,
+      index: idx,
+    })
+  },
+
+  handleClick2(idx, e) {
+    this.$child('gallery').showGallery({
+      srcs: this.srcs,
+      index: idx,
+      autoplay: true
+    })
+  },
+
+  handleClick3(idx, e) {
+    this.$child('gallery').showGallery({
+      srcs: this.srcs,
+      index: idx,
+      vertical: true
+    })
+  }
+}
+</script>
+
+<style lang="less">
+.wrap {
+  flex-direction: column;
+  background-color: #eee;
+}
+
+.image-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+}
+
+.title{
+  font-size: 50px;
+  margin: 10px 20px;
+}
+
+image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin: 0 20px;
+}
+</style>

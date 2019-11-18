@@ -3,9 +3,11 @@
 .DS_Store
 .vscode
 src/.DS_Store
+src/images/.DS_Store
 
 node_modules/
 build/
+dist/
 
 package-lock.json
 yarn.lock

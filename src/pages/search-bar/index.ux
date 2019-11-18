@@ -1,0 +1,27 @@
+<import name="my-search-bar" src="apex-ui/components/search-bar/index.ux"></import>
+<template>
+  <div class="wrap">
+    <text class="title">Normal</text>
+    <my-search-bar></my-search-bar>
+    <text class="title">Focus</text>
+    <my-search-bar input-focus="{{true}}"></my-search-bar>
+    <text class="title">Show cancel button</text>
+    <my-search-bar has-cancel="{{true}}"></my-search-bar>
+  </div>
+</template>
+
+<script>
+export default {
+  
+}
+</script>
+
+<style lang="less">
+.wrap {
+  flex-direction: column;
+  background-color: #f8f8f8;
+  .title {
+    padding: 30px;
+  }
+}
+</style>

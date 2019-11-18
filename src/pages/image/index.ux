@@ -1,0 +1,85 @@
+<import name="my-image" src="apex-ui/components/image/index"></import>
+
+<template>
+  <div class="wrap">
+    <text class="title">Shape</text>
+    <div class="group">
+      <my-image src="https://picsum.photos/200/200/?random&s=1" shape="rounded" width="200px" height="200px"></my-image>
+      <my-image src="https://picsum.photos/200/200/?random&s=2" shape="circle" width="200px" height="200px"></my-image>
+      <my-image src="https://picsum.photos/200/200/?random&s=3" shape="thumbnail" width="200px" height="200px"></my-image>
+    </div>
+    <text class="title">loading</text>
+    <div class="group">
+      <my-image src="https://picsum.photos/200/200/?random&s=4" width="200px" height="200px"></my-image>
+      <my-image src="https://picsum.photos/200/200/?random&s=5" loading="loading" width="200px" height="200px"></my-image>
+      <my-image src="https://picsum.photos/200/200/?random&s=6" width="200px" height="200px">
+        <div class="loading-message" slot="loading">
+          <image src="../../images/loading.gif"></image>
+        </div>
+      </my-image>
+    </div>
+    <text class="title">empty</text>
+    <div class="group">
+      <my-image src="" width="200px" height="200px"></my-image>
+      <my-image src="" empty="empty" width="200px" height="200px"></my-image>
+      <my-image src="" width="200px" height="200px">
+        <div class="empty-message" slot="empty">
+          <image src="../../images/ufo.svg"></image>
+          <text>图片不见了</text>
+        </div>
+      </my-image>
+    </div>
+    <text class="title">error</text>
+    <div class="group">
+      <my-image src="error" width="200px" height="200px"></my-image>
+      <my-image src="error" error="error" width="200px" height="200px"></my-image>
+      <my-image src="error" width="200px" height="200px">
+        <div class="empty-message" slot="error">
+          <image src="../../images/ufo.svg"></image>
+          <text>图片不见了</text>
+        </div>
+        <div class="loading-message" slot="loading">
+          <image src="../../images/loading.gif"></image>
+        </div>
+      </my-image>
+    </div>
+  </div>
+</template>
+<style lang="less">
+.wrap {
+  flex-direction: column;
+  .title{
+    padding: 10px 80px;
+  }
+  .group {
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px 0;
+  }
+}
+
+.empty-message{
+  flex-direction: column;
+  justify-content: center;
+  image{
+    align-self: center;
+    width:100px;
+    height:100px;
+  }
+}
+
+.loading-message{
+  justify-content: center;
+  image{
+    align-self: center;
+    width:100px;
+    height:100px;
+  }
+}
+</style>
+<script>
+export default {
+  data() {
+  }
+}
+</script>

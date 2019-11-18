@@ -1,0 +1,46 @@
+<import name="my-accordion" src="apex-ui/components/accordion/index.ux"></import>
+<import name="my-accordion-group" src="apex-ui/components/accordion-group/index.ux"></import>
+
+<template>
+  <div class="wrap">
+    <my-accordion-group id="default" title="Default" default-open="{{ ['0', '1'] }}" onchange="handleChange">
+      <my-accordion group-id="default" title="Accordion 1" content="自定义组件自定义组件自定义组件自定义组件自定义组件"></my-accordion>
+      <my-accordion group-id="default" title="Accordion 2" content="自定义组件自定义组件自定义组件自定义组件自定义组件"></my-accordion>
+      <my-accordion group-id="default" title="Accordion 3" content="自定义组件自定义组件自定义组件自定义组件自定义组件"></my-accordion>
+    </my-accordion-group>
+    <my-accordion-group id="default2" title="thumb" default-open="{{ ['0'] }}">
+      <my-accordion group-id="default2" thumb="../../images/logo-d.png" title="Accordion 4" content="自定义组件自定义组件自定义组件自定义组件自定义组件"></my-accordion>
+      <my-accordion group-id="default2" thumb="../../images/logo-d.png" title="Accordion 5" content="自定义组件自定义组件自定义组件自定义组件自定义组件"></my-accordion>
+      <my-accordion group-id="default2" thumb="../../images/logo-d.png" title="Accordion 6" content="自定义组件自定义组件自定义组件自定义组件自定义组件"></my-accordion>
+    </my-accordion-group>
+    <my-accordion-group id="default3" title="disabled">
+      <my-accordion group-id="default3" disabled="{{true}}" title="Accordion 7" content="自定义组件自定义组件自定义组件自定义组件自定义组件"></my-accordion>
+      <my-accordion group-id="default3" disabled="{{true}}" title="Accordion 8" content="自定义组件自定义组件自定义组件自定义组件自定义组件"></my-accordion>
+      <my-accordion group-id="default3" disabled="{{true}}" title="Accordion 9" content="自定义组件自定义组件自定义组件自定义组件自定义组件"></my-accordion>
+    </my-accordion-group>
+    <my-accordion-group id="default4" title="accordion模式" accordion="{{true}}" default-open="{{ ['0'] }}">
+      <my-accordion group-id="default4" title="Accordion 10" content="自定义组件自定义组件自定义组件自定义组件自定义组件"></my-accordion>
+      <my-accordion group-id="default4" title="Accordion 11" content="自定义组件自定义组件自定义组件自定义组件自定义组件"></my-accordion>
+      <my-accordion group-id="default4" title="Accordion 12" content="自定义组件自定义组件自定义组件自定义组件自定义组件"></my-accordion>
+    </my-accordion-group>
+    <my-accordion-group id="default5" title="custom key" label="label" default-open="{{ ['0', '2'] }}">
+      <my-accordion group-id="default5" key="key1" title="Accordion 13" content="自定义组件自定义组件自定义组件自定义组件自定义组件"></my-accordion>
+      <my-accordion group-id="default5" key="key2" title="Accordion 14" content="自定义组件自定义组件自定义组件自定义组件自定义组件"></my-accordion>
+      <my-accordion group-id="default5" key="key3" title="Accordion 15" content="自定义组件自定义组件自定义组件自定义组件自定义组件"></my-accordion>
+    </my-accordion-group>
+  </div>
+</template>
+
+<script>
+export default {
+  handleChange(e){
+    console.log('index',e.detail.key)
+  }
+}
+</script>
+
+<style>
+.wrap{
+  flex-direction: column;
+}
+</style>
