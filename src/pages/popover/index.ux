@@ -1,0 +1,136 @@
+<import name="my-popover" src="apex-ui/components/popover/index.ux"></import>
+<template>
+  <div class="wrap">
+    <div class="sample">
+      <text class="title">Placement</text>
+      <div class="item top">
+        <my-popover size="{{btn}}" orientation='topLeft' title="top" content='content'>
+          <text class="btn">topLeft</text>
+        </my-popover>
+        <my-popover size="{{btn}}" orientation='top' title="top" content='content'>
+          <text class="btn">top</text>
+        </my-popover>
+        <my-popover size="{{btn}}" orientation='topRight' title="topRight" content='content'>
+          <text class="btn">topRight</text>
+        </my-popover>
+      </div>
+      <div class="item right">
+        <my-popover size="{{btn}}" orientation='rightTop' title="rightTop" content='content'>
+          <text class="btn">rightTop</text>
+        </my-popover>
+        <my-popover size="{{btn}}" orientation='right' title="right" content='content'>
+          <text class="btn">right</text>
+        </my-popover>
+        <my-popover size="{{btn}}" orientation='rightBottom' title="rightBottom" content='content'>
+          <text class="btn">rightBottom</text>
+        </my-popover>
+      </div>
+      <div class="item bottom">
+        <my-popover size="{{btn}}" orientation='bottomRight' title="bottomRight" content='content'>
+          <text class="btn">bottomRight</text>
+        </my-popover>
+        <my-popover size="{{btn}}" orientation='bottom' title="bottom" content='content'>
+          <text class="btn">bottom</text>
+        </my-popover>
+        <my-popover size="{{btn}}" orientation='bottomLeft' title="bottomLeft" content='content'>
+          <text class="btn">bottomLeft</text>
+        </my-popover>
+      </div>
+      <div class="item left">
+        <my-popover size="{{btn}}" orientation='leftTop' title="leftTop" content='content'>
+          <text class="btn">leftTop</text>
+        </my-popover>
+        <my-popover size="{{btn}}" orientation='left' title="left" content='content'>
+          <text class="btn">left</text>
+        </my-popover>
+        <my-popover size="{{btn}}" orientation='leftBottom' title="leftBottom" content='content'>
+          <text class="btn">leftBottom</text>
+        </my-popover>
+      </div>
+    </div>
+    <div class="sample">
+      <text class="title">Custom Style</text>
+      <div class="item">
+        <my-popover popover-color="#d8bfd8" popover-width="400" popover-height="200" size="{{btn}}" title="title" content="content">
+          <text class="btn">top</text>
+        </my-popover>
+      </div>
+    </div>
+    <div class="sample">
+      <text class="title">Slot Style</text>
+      <div class="item">
+        <my-popover size="{{btn}}">
+          <text class="btn">top</text>
+          <text slot="title" class="slot-title" onclick="jump('custom title!')">Title</text>
+          <text slot="content" class="slot-content" onclick="jump('custom content!')">content</text>
+        </my-popover>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import prompt from '@system.prompt'
+export default {
+  data: {
+    btn: [200, 80],
+  },
+  jump(type) {
+    prompt.showToast({
+      message: type
+    })
+  }
+}
+</script>
+
+<style lang="less">
+.wrap {
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  padding: 20px 20px 60px;
+  background-color: #f7f7f7;
+  .sample {
+    flex-direction: column;
+    width: 100%;
+    .title {
+      margin-top: 20px;
+    }
+    .item {
+      width: 100%;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+      .btn {
+        color: #000000;
+        height: 80px;
+        width: 200px;
+        border: 1px solid #e4e4e4;
+        border-radius: 12px;
+        text-align: center;
+        background-color: #fff;
+      }
+      .btn:active {
+        background-color: #e4e4e4;
+      }
+    }
+    .right {
+      align-items: flex-start;
+    }
+    .left {
+      align-items: flex-end;
+    }
+    .slot-title {
+      color: #ff4500;
+      font-size: 30px;
+      padding: 20px;
+      width: 100%;
+    }
+    .slot-content {
+      padding: 20px;
+      width: 100%;
+      border-top: 1px solid #e4e4e4;
+    }
+  }
+}
+</style>

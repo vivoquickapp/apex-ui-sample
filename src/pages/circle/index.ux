@@ -1,0 +1,96 @@
+<import name="my-circle" src="apex-ui/components/circle/index"></import>
+<import name="my-button" src="apex-ui/components/button/index.ux"></import>
+<import name="my-icon" src="apex-ui/components/icon/index.ux"></import>
+
+<template>
+  <div class="wrap">
+    <text class="title">基本用法</text>
+    <div class="group">
+      <my-circle percent="80" size="200">
+        <text class="basic-use-text">80%</text>
+      </my-circle>
+      <my-circle percent="100" stroke-color="#19be6b" size="200">
+        <my-icon type="checkmark" size="80" color="#19be6b"></my-icon>
+      </my-circle>
+      <my-circle percent="75" stroke-color="#ed3f14" size="200">
+        <my-icon type="close" size="80" color="#ed3f14"></my-icon>
+      </my-circle>
+    </div>
+    <text class="title">不同样式</text>
+    <div class="group">
+      <my-circle percent="80" size="200" stroke-linecap="square" stroke-width="30" trail-width="10" trail-color="#ed3f14"></my-circle>
+      <my-circle percent="80" size="200" show-trail="{{false}}"></my-circle>
+    </div>
+    <text class="title">起始角度及旋转方向</text>
+    <div class="group">
+      <my-circle percent="80" size="200" anticlockwise="{{true}}"></my-circle>
+      <my-circle percent="80" size="200" s-angle="{{90}}"></my-circle>
+      <my-circle percent="80" size="200" anticlockwise="{{true}}" s-angle="{{90}}"></my-circle>
+    </div>
+    <text class="title">与外部组件配合</text>
+    <div class="group">
+      <my-circle percent="{{percent}}" stroke-color="{{color}}" s-angle="{{270}}" >
+        <div>
+          <my-icon if="{{percent >= 100}}" type="checkmark" size="80" color="#19be6b" ></my-icon>
+          <text else class="basic-use-text">{{percent}}%</text>
+        </div>
+      </my-circle>
+      <div>
+        <my-button type="success" ontap="handleClickAdd">+</my-button>
+        <my-button type="success" ontap="handleClickMinus">-</my-button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data(){
+    return {
+      percent: 40,
+    }
+  },
+
+  computed: {
+    color(){
+      let color = '#2db7f5'
+      if (this.percent >= 100) {
+        color = '#5cb85c'
+      }
+      return color
+    }
+  },
+  
+  handleClickAdd(){
+    if(this.percent < 100){
+      this.percent += 10
+    }
+  },
+
+  handleClickMinus(){
+    if(this.percent > 0){
+      this.percent -= 10
+    }
+  }
+}
+</script>
+
+<style lang="less">
+.wrap {
+  flex-direction: column;
+  .title{
+    padding: 10px 80px;
+  }
+  .group {
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px 0;
+  }
+}
+
+.basic-use-text{
+  font-size: 40px;
+  font-weight: bold;
+}
+</style>
+

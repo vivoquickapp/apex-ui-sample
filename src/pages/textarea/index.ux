@@ -1,0 +1,103 @@
+<import name="my-textarea" src="apex-ui/components/textarea/index.ux"></import>
+<import name="my-icon" src="apex-ui/components/icon/index.ux"></import>
+
+<template>
+  <div class="wrap">
+    <text class="title">基础用法</text>
+    <div class="group">
+      <div class="cell">
+        <my-textarea placeholder="请输入内容"></my-textarea>
+      </div>
+      <div class="cell">
+        <my-textarea label="label" placeholder="请输入内容"></my-textarea>
+      </div>
+      <div class="cell">
+        <my-textarea label="label" placeholder="请输入内容" rows="{{3}}"></my-textarea>
+      </div>
+    </div>
+    <text class="title">focus</text>
+    <div class="group">
+      <div class="cell">
+        <my-textarea label="label" placeholder="请输入内容" focus="{{true}}"></my-textarea>
+      </div>
+    </div>
+    <text class="title">count</text>
+    <div class="group">
+      <div class="cell">
+        <my-textarea placeholder="请输入内容" rows="{{3}}" has-count="{{true}}"></my-textarea>
+      </div>
+    </div>
+    <text class="title">clear</text>
+    <div class="group">
+      <div class="cell">
+        <my-textarea label="label" placeholder="请输入内容" clear="{{true}}" default-value="文本"></my-textarea>
+      </div>
+    </div>
+    <text class="title">disabled</text>
+    <div class="group">
+      <div class="cell">
+        <my-textarea label="label" placeholder="请输入内容" default-value="undisabled"></my-textarea>
+      </div>
+      <div class="cell">
+        <my-textarea label="label" placeholder="请输入内容" disabled="{{true}}" default-value="disabled"></my-textarea>
+      </div>
+    </div>
+    <text class="title">extra</text>
+    <div class="group">
+      <div class="cell">
+        <my-textarea label="Dollar" extra="$" default-value="1024"></my-textarea>
+      </div>
+      <div class="cell">
+        <my-textarea label="RMB" extra="¥" default-value="1024"></my-textarea>
+      </div>
+    </div>
+    <text class="title">slot</text>
+    <div class="group">
+      <div class="cell">
+        <my-textarea placeholder="请输入内容">
+          <div slot="label" style="padding-right:50px;">
+            <my-icon type="paper-plane" size="50"></my-icon>
+          </div>
+        </my-textarea>
+      </div>
+      <div class="cell">
+        <my-textarea placeholder="请输入内容">
+          <my-icon type="cut" size="50" slot="extra"></my-icon>
+        </my-textarea>
+      </div>
+    </div>
+  </div>
+</template>
+<style lang="less">
+@import '~apex-ui/components//styles/base.less';
+
+.wrap {
+  flex-direction: column;
+  background-color: @background-color-base;
+
+  .title {
+    margin: 20px;
+  }
+
+  .group{
+    flex-direction: column;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    
+    .cell{
+      margin-left: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+  }
+}
+</style>
+<script>
+export default {
+  data() {
+    return {
+    }
+  }
+}
+</script>

@@ -1,0 +1,84 @@
+<import name="my-spin" src="apex-ui/components/spin/index.ux"></import>
+<import name="my-button" src="apex-ui/components/button/index.ux"></import>
+<import name="my-image" src="apex-ui/components/image/index"></import>
+
+<template>
+  <div class="wrap">
+    <text class="title">基本用法</text>
+    <div class="group">
+      <my-spin ></my-spin>
+    </div>
+    <text class="title">tip</text>
+    <div class="group">
+      <my-spin tip="加载中..."></my-spin>
+      <my-spin tip="Loading..."></my-spin>
+    </div>
+    <text class="title">size</text>
+    <div class="group">
+      <my-spin size="small" tip="加载中..."></my-spin>
+      <my-spin tip="加载中..."></my-spin>
+      <my-spin size="large" tip="加载中..."></my-spin>
+    </div>
+    <text class="title">自定义color</text>
+    <div class="group">
+      <my-spin tip="加载中..." color="red"></my-spin>
+      <my-spin tip="加载中..." color="rgba(0,0,0,0.5)"></my-spin>
+      <my-spin tip="加载中..." color="#eee"></my-spin>
+    </div>
+    <text class="title">自定义加载样式</text>
+    <div class="group">
+      <my-spin>
+        <div slot="custom">
+          <text>loading...</text>
+        </div>
+      </my-spin>
+    </div>
+    <text class="title">nested</text>
+    <div style="flex-direction: column;">
+      <my-spin tip="加载中..." nested="{{true}}" loading="{{loading}}">
+        <div slot="nested" style="flex-direction: column;">
+          <text>参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本</text>
+          <text>参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本</text>
+          <text>参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本</text>
+          <text>参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本参考文本</text>
+        </div>
+      </my-spin>
+      <my-button type="info" inline="true" onclick="changeLoading">按钮</my-button>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data(){
+    return {
+      loading: true
+    }
+  },
+  
+  changeLoading(){
+    this.loading = !this.loading
+  }
+}
+</script>
+
+<style lang="less">
+.wrap {
+  flex-direction: column;
+  .title{
+    padding: 10px 80px;
+  }
+  .group {
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px 0;
+  }
+}
+
+.demo-badge{
+  width: 80px;
+  height: 80px;
+  background-color: #eee;
+  border-radius: 6px;
+}
+</style>

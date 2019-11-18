@@ -1,0 +1,40 @@
+<import name="my-input" src="apex-ui/components/input/index.ux"></import>
+<import name="my-barcode" src="apex-ui/components/barcode/index"></import>
+<template>
+  <div class="wrap">
+    <div class="panel">
+      <my-input value="{{ number }}" type="number" maxlength="13" onchange="changeHandler()" placeholder="请输入13位有效条形码编码"></my-input>
+      <text>提示：扫描只能识别有效的条形码</text>
+      <div class="barcode">
+        <my-barcode number="{{ number }}"></my-barcode>
+      </div>
+    </div>
+  </div>
+</template>
+<style lang="less">
+  .wrap {
+    flex-direction: column;
+    .panel {
+      padding: 20px;
+      flex-direction: column;
+      .barcode {
+        padding: 20px 0;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+</style>
+<script>
+export default {
+    data() {
+        return {
+            number: 6256325654126
+        }
+    },
+    changeHandler({detail}) {
+        console.log('number changed', detail);
+        this.number = detail.value;
+    },
+}
+</script>

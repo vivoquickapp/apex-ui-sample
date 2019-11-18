@@ -19,6 +19,7 @@
       <div class="item"><a href="/pages/tabbar">标签栏 tabbar</a></div>
       <div class="item"><a href="/pages/pagination">分页器 pagination</a></div>
       <div class="item"><a href="/pages/segmented-control">分段器 segmented-control</a></div>
+      <div class="item"><a href="/pages/popover">气泡框 popover</a></div>
     </div>
     <div class="type">
       <text>表单数据</text>
@@ -30,6 +31,9 @@
       <div class="item"><a href="/pages/checkbox">复选框 checkbox</a></div>
       <div class="item"><a href="/pages/switch">滑动按钮 switch</a></div>
       <div class="item"><a href="/pages/rating">评分 rating</a></div>
+      <div class="item"><a href="/pages/textarea">多行输入框 textarea</a></div>
+      <div class="item"><a href="/pages/calendar">日历 calendar</a></div>
+      <div class="item"><a href="/pages/search-bar">搜索栏 searchBar</a></div>
     </div>
      <div class="type">
       <text>数据展示</text>
@@ -40,6 +44,12 @@
       <div class="item"><a href="/pages/avatar">头像 avatar</a></div>
       <div class="item"><a href="/pages/card">卡片 card</a></div>
       <div class="item"><a href="/pages/divider">分隔符 divider</a></div>
+      <div class="item"><a href="/pages/badge">徽章 badge</a></div>
+      <div class="item"><a href="/pages/image">图片 image</a></div>
+      <div class="item"><a href="/pages/media">媒体对象 media</a></div>
+      <div class="item"><a href="/pages/accordion">手风琴 accordion</a></div>
+      <div class="item"><a href="/pages/select">下拉框 select</a></div>
+      <div class="item"><a href="/pages/steps">步骤 steps</a></div>
     </div>
     <div class="type">
       <text>操作反馈</text>
@@ -48,6 +58,18 @@
       <div class="item"><a href="/pages/message">全局提示 message</a></div>
       <div class="item"><a href="/pages/toast">提示框 toast</a></div>
       <div class="item"><a href="/pages/load-more">页底提示 loadMore</a></div>
+      <div class="item"><a href="/pages/dialog">对话框 dialog</a></div>
+      <div class="item"><a href="/pages/spin">加载中 spin</a></div>
+      <div class="item"><a href="/pages/circle">进度环 circle</a></div>
+      <div class="item"><a href="/pages/gallery">画廊 gallery</a></div>
+    </div>
+    <div class="type">
+      <text>拓展组件</text>
+    </div>
+    <div class="component">
+      <div class="item"><a href="/pages/barcode">条形码 barcode</a></div>
+      <div class="item"><a href="/pages/qrcode">二维码 qrcode</a></div>
+      <div class="item"><a href="/pages/vcode">验证码 vcode</a></div>
     </div>
   </div>
 </template>

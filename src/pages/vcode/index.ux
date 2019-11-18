@@ -1,0 +1,38 @@
+<import name="my-vcode" src="apex-ui/components/vcode/index.ux"></import>
+<import name="my-input" src="apex-ui/components/input/index.ux"></import>
+<template>
+  <div>
+    <div class="wrap">
+      <div class="row">
+        <my-input title="验证码" value="{{content}}" placeholder="请输入验证码" onchange="changeHandler()"></my-input>
+        <my-vcode onchange="changeHandler()"></my-vcode>
+      </div>
+      <div class="row">
+        <my-input title="验证码" value="{{content}}" placeholder="请输入验证码" onchange="changeHandler()"></my-input>
+        <my-vcode onchange="changeHandler()"></my-vcode>
+      </div>
+      <text>tips:点击验证码可刷新</text>
+    </div>
+  </div>
+</template>
+<style lang="less">
+  .wrap {
+    padding: 20px;
+    flex-direction: column;
+
+    .row {
+      padding: 20px 0;
+    }
+
+    text {
+      padding: 20px;
+    }
+  }
+</style>
+<script>
+    export default {
+        changeHandler(e) {
+            console.log('vcode value', e.detail.value)
+        }
+    }
+</script>

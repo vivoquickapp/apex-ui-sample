@@ -14,6 +14,9 @@
     },
     {
       "name": "system.shortcut"
+    },
+    {
+      "name": "system.image"
     }
   ],
   "permissions": [
@@ -22,7 +25,8 @@
     }
   ],
   "config": {
-    "logLevel": "debug"
+    "logLevel": "debug",
+    "designWidth": 750
   },
   "router": {
     "entry": "pages/home",
@@ -97,6 +101,51 @@
         "component": "index"
       },
       "pages/load-more": {
+        "component": "index"
+      },
+      "pages/badge": {
+        "component": "index"
+      },
+      "pages/barcode": {
+        "component": "index"
+      },
+      "pages/spin": {
+        "component": "index"
+      },
+      "pages/circle": {
+        "component": "index"
+      },
+      "pages/accordion": {
+        "component": "index"
+      },
+      "pages/calendar": {
+        "component": "index"
+      },
+      "pages/popover": {
+        "component": "index"
+      },
+      "pages/search-bar": {
+        "component": "index"
+      },
+      "pages/dialog": {
+        "component": "index"
+      },
+      "pages/textarea": {
+        "component": "index"
+      },
+      "pages/media": {
+        "component": "index"
+      },
+      "pages/gallery": {
+        "component": "index"
+      },
+      "pages/qrcode": {
+        "component": "index"
+      },
+      "pages/steps": {
+        "component": "index"
+      },
+      "pages/vcode": {
         "component": "index"
       }
     }
@@ -204,6 +253,62 @@
       },
       "pages/load-more": {
         "titleBarText": "底部提示 loadMore",
+        "menu": false
+      },
+      "pages/badge": {
+        "titleBarText": "徽章 badge",
+        "menu": false
+      },
+      "pages/image": {
+        "titleBarText": "图片 image",
+        "menu": false
+      },
+      "pages/spin": {
+        "titleBarText": "加载中 spin",
+        "menu": false
+      },
+      "pages/circle": {
+        "titleBarText": "进度环 circle",
+        "menu": false
+      },
+      "pages/textarea": {
+        "titleBarText": "多行输入框 textarea",
+        "menu": false
+      },
+      "pages/gallery": {
+        "titleBarText": "画廊 gallery",
+        "menu": false
+      },
+      "pages/accordion": {
+        "titleBarText": "手风琴 accordion",
+        "menu": false
+      },
+      "pages/calendar": {
+        "titleBarText": "日历 calendar",
+        "menu": false
+      },
+      "pages/popover": {
+        "titleBarText": "气泡框 popover",
+        "menu": false
+      },
+      "pages/search-bar": {
+        "titleBarText": "搜索栏 searchBar",
+        "menu": false
+      },
+      "pages/dialog": {
+        "titleBarText": "对话框 dialog",
+        "menu": false
+      },
+      "pages/qrcode": {
+        "titleBarText": "二维码 qrcode",
+        "menu": false
+      },
+      "pages/steps": {
+        "titleBarText": "步骤 steps",
+        "menu": false
+      },
+      "pages/vcode": {
+        "titleBarText": "验证码 vcode",
         "menu": false
       }
     }

@@ -1,0 +1,70 @@
+<import name="my-badge" src="apex-ui/components/badge/index"></import>
+<import name="my-icon" src="apex-ui/components/icon/index"></import>
+
+<template>
+  <div class="wrap">
+    <text class="title">基本用法</text>
+    <div class="group">
+      <my-badge count="1">
+        <div class="demo-badge"></div>
+      </my-badge>
+      <my-badge count="10">
+        <div class="demo-badge"></div>
+      </my-badge>
+      <my-badge count="100">
+        <div class="demo-badge"></div>
+      </my-badge>
+    </div>
+    <text class="title">只显示小红点</text>
+    <div class="group">
+      <my-badge dot="{{true}}" count="1">
+        <div class="demo-badge"></div>
+      </my-badge>
+      <my-badge dot="{{true}}" count="1">
+        <my-icon type="chat" size="80"></my-icon>
+      </my-badge>
+      <my-badge dot="{{true}}" count="1">
+        <text style="font-size:40px;">文本文本</text>
+      </my-badge>
+    </div>
+    <text class="title">封顶数字</text>
+    <div class="group">
+      <my-badge count="100">
+        <div class="demo-badge"></div>
+      </my-badge>
+      <my-badge count="1000" overflow-count="999">
+        <div class="demo-badge"></div>
+      </my-badge>
+    </div>
+  </div>
+</template>
+
+<style lang="less">
+.wrap {
+  flex-direction: column;
+  .title{
+    padding: 10px 80px;
+  }
+  .group {
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px 0;
+  }
+}
+
+.demo-badge{
+  width: 80px;
+  height: 80px;
+  background-color: #eee;
+  border-radius: 6px;
+}
+</style>
+
+<script>
+export default {
+  data() {
+  }
+}
+</script>
+
+

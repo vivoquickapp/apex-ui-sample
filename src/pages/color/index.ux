@@ -155,7 +155,7 @@
   }
 
   .disabled-bg {
-    background-color: @btn-disable-color;
+    background-color: ;
   }
 
   .border-bg {

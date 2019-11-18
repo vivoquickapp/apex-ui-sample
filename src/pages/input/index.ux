@@ -15,7 +15,7 @@
   </div>
 </template>
 <style lang="less">
-  @import '~apex-ui/components//styles/base.less';
+  @import '~apex-ui/components/styles/base.less';
 
   .wrap {
     flex-direction: column;

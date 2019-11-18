@@ -1,0 +1,31 @@
+<import src="apex-ui/components/qrcode/index" name="my-qrcode"></import>
+<import src="apex-ui/components/input/index" name="my-input"></import>
+<template>
+  <div class="wrap">
+    <text class="note">请输入文字，即使输入即时生成</text>
+    <my-input value="{{content}}" placeholder="请输入要生成二维码的内容" onchange="changeHandler()"></my-input>
+    <my-qrcode content="{{content}}"></my-qrcode>
+    <text class="note">提示：长按二维码可保存到相册</text>
+  </div>
+</template>
+<style lang="less">
+  .wrap {
+    flex-direction: column;
+    .note {
+      padding: 20px;
+    }
+  }
+</style>
+<script>
+    export default {
+        data() {
+            return {
+                content: 'https://vivoquickapp.github.io/apex-ui-docs/'
+            }
+        },
+        changeHandler({detail}) {
+            console.log(this.content, detail);
+            this.content = detail.value
+        }
+    }
+</script>
