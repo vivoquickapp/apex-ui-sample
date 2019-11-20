@@ -7,7 +7,6 @@ src/images/.DS_Store
 
 node_modules/
 build/
-dist/
 
 package-lock.json
 yarn.lock
