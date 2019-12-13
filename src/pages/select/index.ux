@@ -1,0 +1,98 @@
+<import name="my-icon" src="apex-ui/components/icon/index"></import>
+<import name="my-select" src="apex-ui/components/select/index"></import>
+<template>
+  <div class="wrap">
+    <div class="item" onclick="singleSelect">
+      <text class="type">单选</text>
+      <div class="icon">
+        <text>{{result1}}</text>
+        <my-icon type="arrow-fwd" size="40"></my-icon>
+      </div>
+    </div>
+    <div class="item" onclick="multiSelect">
+      <text class="type">多选</text>
+      <div class="icon">
+        <text>{{result2}}</text>
+        <my-icon type="arrow-fwd" size="40"></my-icon>
+      </div>
+    </div>
+    <div class="item" onclick="customSelect">
+      <text class="type">自定义个数</text>
+      <div class="icon">
+        <text>{{result3}}</text>
+        <my-icon type="arrow-fwd" size="40"></my-icon>
+      </div>
+    </div>
+    <my-select id="select1" oncomfirm="singleClose"></my-select>
+    <my-select id="select2" oncomfirm="multiClose"></my-select>
+    <my-select id="select3" oncomfirm="customClose"></my-select>
+  </div>
+</template>
+
+<script>
+export default {
+  data: {
+    result1: "请选择",
+    result2: "请选择",
+    result3: "请选择",
+    opt1: []
+  },
+  singleSelect() {
+    let opt = ["苹果", "梨子", "西瓜", "荔枝", "榴莲", "番石榴"]
+    this.$child('select1').showSelect({
+      options: opt,
+    })
+  },
+  multiSelect() {
+    let opt = ["医生", "法官", "律师", "教师", "警察", "护士", "会计"]
+    this.$child('select2').showSelect({
+      options: opt,
+      type: 'checkBox'
+    })
+  },
+  customSelect() {
+    let opt = ["北京", "伦敦", "东京", "巴黎", "罗马", "柏林", "哥本哈根", "曼谷"]
+    this.$child('select3').showSelect({
+      options: opt,
+      type: 'checkBox',
+      max: 3
+    })
+  },
+  singleClose(evt) {
+    this.result1 = evt.detail.data || "请选择"
+  },
+  multiClose(evt) {
+    this.result2 = evt.detail.data || "请选择"
+  },
+  customClose(evt) {
+    this.result3 = evt.detail.data || "请选择"
+  },
+}
+</script>
+
+<style lang="less">
+.wrap {
+  flex: 1;
+  width: 100%;
+  background-color: #f9f9f9;
+  flex-direction: column;
+  justify-content: center;
+  .item {
+    border: 1px solid #eeeeee;
+    background-color: #fff;
+    height: 80px;
+    width: 100%;
+    padding-left: 20px;
+    align-items: center;
+    justify-content: space-between;
+    .type {
+      height: 80px;
+      width: 40%;
+      justify-content: space-between;
+    }
+    .icon {
+      justify-content: space-between;
+    }
+  }
+}
+</style>

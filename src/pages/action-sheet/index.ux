@@ -1,0 +1,65 @@
+<import name="my-button" src="apex-ui/components/button/index.ux"></import>
+<import name="my-action-sheet" src="apex-ui/components/action-sheet/index.ux"></import>
+
+<template>
+  <div class="wrap">
+    <my-button type="default" ontap="actionSheet('default')">Default ActionSheet</my-button>
+    <my-button type="default" ontap="actionSheet('iOS')">iOS ActionSheet</my-button>
+
+    <my-action-sheet id="actionSheet"></my-action-sheet>
+  </div>
+</template>
+<style lang="less">
+  .wrap {
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>
+<script>
+  export default {
+    data() {
+      return {
+        timerActionSheet: null
+      }
+    },
+    actionSheet(theme){
+      if(this.timerActionSheet) clearTimeout(this.timerActionSheet)
+
+      this.$child('actionSheet').showSheet({
+        theme,
+        titleText: '三秒后自动关闭',
+        buttons: [{
+          text: '回到首页',
+          icon: {
+            type: 'share-alt',
+            position: 'right'
+          }
+        },{
+          text: 'Disabled',
+          disabled: true
+        }],
+        buttonClicked: (index,item)=>{
+          if(index==0){
+            const router = require('@system.router')
+            router.clear()
+            router.replace({uri: '/'})
+          }
+          return true
+        },
+        cancelText: '取消',
+        cancel: ()=>{
+          console.log('取消按钮或蒙层点击事件')
+        },
+        destructiveText: '删除',
+        destructiveButtonClicked: ()=>{
+          console.log('删除按钮点击事件')
+          return true
+        }
+      })
+
+      this.timerActionSheet = setTimeout(()=>{
+        this.$child('actionSheet').hideSheet()
+      }, 3000)
+    }
+  }
+</script>

@@ -1,0 +1,35 @@
+<import name="my-mask" src="apex-ui/components/mask/index"></import>
+<import name="my-button" src="apex-ui/components/button/index.ux"></import>
+
+<template>
+  <div class="wrap">
+    <my-mask id="mask"></my-mask>
+
+    <my-button type="success" ontap="handleClickShow">显示 背景幕</my-button>
+    <my-button type="ghost" ontap="handleClickHide">隐藏 背景幕</my-button>
+  </div>
+</template>
+<style lang="less">
+  .wrap {
+    flex-direction: column;
+    justify-content: center;
+    .text-center{
+      text-align: center;
+      font-size: 40px;
+      margin-top: 30px;
+    }
+  }
+</style>
+<script>
+  export default {
+    data() {
+      return {}
+    },
+    handleClickShow(){
+      this.$child('mask').show()
+    },
+    handleClickHide(){
+      this.$child('mask').hide()
+    }
+  } 
+</script>

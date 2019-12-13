@@ -1,0 +1,53 @@
+<import name="my-upload" src="apex-ui/components/upload/index"></import>
+<template>
+  <my-upload url="http://www.example.com/upload" max="9" multi="true" type="image" disabled="false"
+             onchange="changeHandler"
+             onremove="removeHandler" onpreview="previewHandler" onfail="failHandler"
+             onsuccess="successHandler" onbefore="beforeHandler" oncomplete="completeHandler">
+    <text>Upload</text>
+  </my-upload>
+</template>
+<style lang="less"></style>
+<script>
+    import media from '@system.media';
+
+    export default {
+        data() {
+            return {}
+        },
+        changeHandler(e) {
+            console.log('changed', e);
+        },
+        removeHandler(e) {
+            console.log('removed', e);
+        },
+        previewHandler(e) {
+            console.log('preview', e);
+            const {file, fileList} = e.detail;
+            const uris = fileList.map((item) => (item.uri));
+            console.log(file, fileList, uris);
+            media.previewImage({
+                current: file.uri,
+                uris: uris,
+                success: function () {
+                    console.log('preview success')
+                },
+                fail: function (data, code) {
+                    console.log('preview fail, code = ${code}')
+                }
+            })
+        },
+        failHandler(e) {
+            console.log('failed', e);
+        },
+        successHandler(e) {
+            console.log('success', e);
+        },
+        beforeHandler(e) {
+            console.log('before', e);
+        },
+        completeHandler(e) {
+            console.log('completed', e);
+        }
+    }
+</script>

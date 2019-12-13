@@ -49,6 +49,7 @@
       </div>
     </div>
     <div class="sample">
+    <div class="sample" style="margin-top:100px;">
       <text class="title">Custom Style</text>
       <div class="item">
         <my-popover popover-color="#d8bfd8" popover-width="400" popover-height="200" size="{{btn}}" title="title" content="content">
@@ -57,6 +58,7 @@
       </div>
     </div>
     <div class="sample">
+    <div class="sample" style="margin-top:100px;">
       <text class="title">Slot Style</text>
       <div class="item">
         <my-popover size="{{btn}}">
@@ -90,15 +92,20 @@ export default {
   width: 100%;
   padding: 20px 20px 60px;
   background-color: #f7f7f7;
+  padding: 20px;
+  padding-top: 100px;
   .sample {
     flex-direction: column;
     width: 100%;
     .title {
       margin-top: 20px;
+      color: #b8b8b8;
+      font-size: 40px;
     }
     .item {
       width: 100%;
       flex-direction: column;
+      margin-top: 50px;
       align-content: center;
       align-items: center;
       .btn {
