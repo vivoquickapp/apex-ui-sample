@@ -1,0 +1,35 @@
+<import name="my-keyboard" src="apex-ui/components/keyboard/index"></import>
+<import name="my-button" src="apex-ui/components/button/index"></import>
+<template>
+  <div class="wrap">
+    <my-button ontap="showKeyboard('keyboard')">打开默认键盘</my-button>
+    <my-button ontap="showKeyboard('keyboard1')">打开自定义键盘</my-button>
+    <my-keyboard id="keyboard"></my-keyboard>
+    <my-keyboard id="keyboard1" disorder="{{true}}" maxlength="8" title="我的密码" info="数字键盘"
+                 oncomplete="verify()"></my-keyboard>
+  </div>
+</template>
+<style lang="less">
+  .wrap {
+    padding: 20px;
+    flex-direction: column;
+  }
+</style>
+<script>
+    import prompt from '@system.prompt';
+
+    export default {
+        data() {
+            return {}
+        },
+        showKeyboard(key) {
+            this.$child(key).show()
+        },
+        verify(e) {
+            const password = e.detail.numbers.join('');
+            prompt.showToast({
+                message: '我的密码是：' + password
+            })
+        }
+    }
+</script>

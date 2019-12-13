@@ -34,6 +34,8 @@
       <div class="item"><a href="/pages/textarea">多行输入框 textarea</a></div>
       <div class="item"><a href="/pages/calendar">日历 calendar</a></div>
       <div class="item"><a href="/pages/search-bar">搜索栏 searchBar</a></div>
+      <div class="item"><a href="/pages/upload">上传 upload</a></div>
+      <div class="item"><a href="/pages/slider">滑动选择器 slider</a></div>
     </div>
      <div class="type">
       <text>数据展示</text>
@@ -49,7 +51,12 @@
       <div class="item"><a href="/pages/media">媒体对象 media</a></div>
       <div class="item"><a href="/pages/accordion">手风琴 accordion</a></div>
       <div class="item"><a href="/pages/select">下拉框 select</a></div>
+      <div class="item"><a href="/pages/counter">计数器 counter</a></div>
+      <div class="item"><a href="/pages/countdown">倒计时 countdown</a></div>
       <div class="item"><a href="/pages/steps">步骤 steps</a></div>
+      <div class="item"><a href="/pages/sticky">吸顶容器 sticky</a></div>
+      <div class="item"><a href="/pages/index">索引选择器 index</a></div>
+      <div class="item"><a href="/pages/fab-button">浮动按钮 fab-button</a></div>
     </div>
     <div class="type">
       <text>操作反馈</text>
@@ -62,6 +69,10 @@
       <div class="item"><a href="/pages/spin">加载中 spin</a></div>
       <div class="item"><a href="/pages/circle">进度环 circle</a></div>
       <div class="item"><a href="/pages/gallery">画廊 gallery</a></div>
+      <div class="item"><a href="/pages/action-sheet">上拉菜单 actionSheet</a></div>
+      <div class="item"><a href="/pages/backdrop">背景幕 backdrop</a></div>
+      <div class="item"><a href="/pages/popup">弹出框 popup</a></div>
+      <div class="item"><a href="/pages/mask">背景幕 mask</a></div>
     </div>
     <div class="type">
       <text>拓展组件</text>
@@ -70,6 +81,9 @@
       <div class="item"><a href="/pages/barcode">条形码 barcode</a></div>
       <div class="item"><a href="/pages/qrcode">二维码 qrcode</a></div>
       <div class="item"><a href="/pages/vcode">验证码 vcode</a></div>
+      <div class="item"><a href="/pages/keyboard">数字键盘 keyboard</a></div>
+      <div class="item"><a href="/pages/result">结果页 result</a></div>
+      <div class="item"><a href="/pages/filter-bar">筛选栏 filterBar</a></div>
     </div>
   </div>
 </template>

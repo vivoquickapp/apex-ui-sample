@@ -1,0 +1,48 @@
+<import name="result-page" src="apex-ui/components/result/index"></import>
+<template>
+  <result-page icon="{{ icon }}" buttons="{{ buttons }}" title="支付结果" desc="本次支付的结果成功" ontap="clicked">
+    <div class="header" slot="header">
+      <text>头部内容</text>
+    </div>
+    <div class="footer" slot="footer">
+      <text>Copyright © 2019-present</text>
+    </div>
+  </result-page>
+</template>
+<style lang="less"></style>
+<script>
+    import prompt from '@system.prompt';
+    import router from '@system.router';
+
+    export default {
+        data() {
+            return {
+                icon: {
+                    type: 'checkmark-circle',
+                    size: 200,
+                    color: '#33cd5f'
+                },
+                buttons: [
+                    {
+                        text: '确定',
+                        type: 'primary'
+                    },
+                    {
+                        text: '取消',
+                        type: 'ghost'
+                    }
+                ]
+            }
+        },
+        clicked(e) {
+            console.log(e);
+            const index = e.detail.index;
+
+            index === 0 && prompt.showToast({
+                message: '支付成功！'
+            });
+
+            index === 1 && router.back()
+        }
+    }
+</script>

@@ -1,0 +1,75 @@
+<import name="my-popup" src="apex-ui/components/popup/index"></import>
+<import name="my-button" src="apex-ui/components/button/index.ux"></import>
+
+<template>
+  <div class="wrap">
+    <my-button type="default" ontap="handleClickPopupCenter">Center Popup</my-button>
+    <my-button type="default" ontap="handleClickPopupLeft">Left Popup</my-button>
+    <my-button type="default" ontap="handleClickPopupBottom">Bottom Popup</my-button>
+
+    <my-popup 
+      id="popupCenter"
+      position="center"
+      title="提示"
+      content="确定关闭吗???"
+      closable="{{true}}"
+      onclose="onclose('Center Popup')"
+      onclosed="onclosed('Center Popup')"
+    >
+      <my-button type="success" ontap="handleClickClose('popupCenter')">确定</my-button>
+    </my-popup>
+
+    <my-popup 
+      id="popupLeft" 
+      position="left"
+      title="提示"
+      content="确定关闭吗???"
+      onclose="onclose('Left Popup')"
+      onclosed="onclosed('Left Popup')"
+    >
+      <my-button type="success" ontap="handleClickClose('popupLeft')">确定</my-button>
+    </my-popup>
+
+    <my-popup 
+      id="popupBottom" 
+      position="bottom"
+      title="提示"
+      content="确定关闭吗???"
+      onclose="onclose('Right Popup')"
+      onclosed="onclosed('Right Popup')"
+    >
+      <my-button type="success" ontap="handleClickClose('popupBottom')">确定</my-button>
+    </my-popup>
+  </div>
+</template>
+<style lang="less">
+  .wrap {
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>
+<script>
+  export default {
+    data() {
+      return {}
+    },
+    handleClickPopupCenter(){
+      this.$child('popupCenter').show()
+    },
+    handleClickPopupLeft(){
+      this.$child('popupLeft').show()
+    },
+    handleClickPopupBottom(){
+      this.$child('popupBottom').show()
+    },
+    handleClickClose(popup){
+      this.$child(popup).hide()
+    },
+    onclose(popup){
+      console.log(`${popup} 触发 close 事件`)
+    },
+    onclosed(popup){
+      console.log(`${popup} 触发 closed 事件`)
+    }
+  } 
+</script>
