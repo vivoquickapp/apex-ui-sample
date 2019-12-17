@@ -70,7 +70,6 @@
       <div class="item"><a href="/pages/circle">进度环 circle</a></div>
       <div class="item"><a href="/pages/gallery">画廊 gallery</a></div>
       <div class="item"><a href="/pages/action-sheet">上拉菜单 actionSheet</a></div>
-      <div class="item"><a href="/pages/backdrop">背景幕 backdrop</a></div>
       <div class="item"><a href="/pages/popup">弹出框 popup</a></div>
       <div class="item"><a href="/pages/mask">背景幕 mask</a></div>
     </div>
