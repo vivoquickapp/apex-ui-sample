@@ -109,6 +109,9 @@
       "pages/barcode": {
         "component": "index"
       },
+      "pages/image": {
+        "component": "index"
+      },
       "pages/spin": {
         "component": "index"
       },
@@ -146,6 +149,42 @@
         "component": "index"
       },
       "pages/vcode": {
+        "component": "index"
+      },
+      "pages/counter": {
+        "component": "index"
+      },
+      "pages/countdown": {
+        "component": "index"
+      },
+      "pages/keyboard": {
+        "component": "index"
+      },
+      "pages/result": {
+        "component": "index"
+      },
+      "pages/upload": {
+        "component": "index"
+      },
+      "pages/action-sheet": {
+        "component": "index"
+      },
+      "pages/sticky": {
+        "component": "index"
+      },
+      "pages/index": {
+        "component": "index"
+      },
+      "pages/fab-button": {
+        "component": "index"
+      },
+      "pages/popup": {
+        "component": "index"
+      },
+      "pages/filter-bar": {
+        "component": "index"
+      },
+      "pages/mask": {
         "component": "index"
       }
     }
@@ -309,6 +348,54 @@
       },
       "pages/vcode": {
         "titleBarText": "验证码 vcode",
+        "menu": false
+      },
+      "pages/counter": {
+        "titleBarText": "计数器 counter",
+        "menu": false
+      },
+      "pages/countdown": {
+        "titleBarText": "倒计时 countdown",
+        "menu": false
+      },
+      "pages/keyboard": {
+        "titleBarText": "数字键盘 keyboard",
+        "menu": false
+      },
+      "pages/result": {
+        "titleBarText": "结果页 result",
+        "menu": false
+      },
+      "pages/upload": {
+        "titleBarText": "上传 upload",
+        "menu": false
+      },
+      "pages/action-sheet": {
+        "titleBarText": "上拉菜单 actionSheet",
+        "menu": false
+      },
+      "pages/sticky": {
+        "titleBarText": "吸顶容器 sticky",
+        "menu": false
+      },
+      "pages/index": {
+        "titleBarText": "索引选择器 index",
+        "menu": false
+      },
+      "pages/fab-button": {
+        "titleBarText": "浮动按钮 fab-button",
+        "menu": false
+      },
+      "pages/popup": {
+        "titleBarText": "弹出框 popup",
+        "menu": false
+      },
+      "pages/filter-bar": {
+        "titleBarText": "筛选栏 filterBar",
+        "menu": false
+      },
+      "pages/mask": {
+        "titleBarText": "背景幕 mask",
         "menu": false
       }
     }

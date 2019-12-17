@@ -1,0 +1,49 @@
+<import name="my-index" src="apex-ui/components/index/index.ux"></import>
+<import name="my-index-item" src="apex-ui/components/index-item/index.ux"></import>
+
+<template>
+  <div>
+    <my-index id="index1">
+      <block for="{{ names in alphabet }}">
+        <my-index-item group-id="index1" name="{{ names.initial }}">
+          <div class="content" for="{{ name in names.cells }}"><text>{{ name }}</text></div>
+        </my-index-item>
+      </block>
+    </my-index>
+  </div>
+</template>
+
+<script>
+const NAMES = ['Aaron', 'Alden', 'Austin', 'Baldwin', 'Braden', 'Carl', 'Chandler', 'Clyde', 'David', 'Edgar', 'Elton', 'Floyd', 'Freeman', 'Gavin', 'Hector', 'Henry', 'Ian', 'Jason', 'Joshua', 'Kane', 'Lambert', 'Matthew', 'Morgan', 'Neville', 'Oliver', 'Oscar', 'Perry', 'Quinn', 'Ramsey', 'Scott', 'Seth', 'Spencer', 'Timothy', 'Todd', 'Trevor', 'Udolf', 'Victor', 'Vincent', 'Walton', 'Willis', 'Xavier', 'Yvonne', 'Zack', 'Zane']
+
+export default {
+  data() {
+    return {
+      alphabet: [],
+    }
+  },
+
+  onInit() {
+    const alphabet = []
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach((initial) => {
+      const cells = NAMES.filter((name) => name.charAt(0) === initial)
+      alphabet.push({
+        initial,
+        cells
+      })
+    })
+    this.alphabet = alphabet
+  }
+}
+</script>
+
+<style lang="less">
+.content {
+  padding: 20px 15px;
+  border-bottom: 1px solid #eee;
+  text {
+    color: #000000;
+    font-size: 40px;
+  }
+}
+</style>

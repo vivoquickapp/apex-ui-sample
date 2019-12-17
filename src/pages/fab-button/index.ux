@@ -1,0 +1,79 @@
+<import name="my-fab-button" src="apex-ui/components/fab-button/index"></import>
+<import name="my-button" src="apex-ui/components/button/index"></import>
+
+<template>
+  <div>
+    <my-fab-button theme="light" position="topLeft" buttons="{{buttons}}" direction="vertical" action-button-rotate="{{false}}"></my-fab-button>
+    <my-fab-button theme="royal" position="bottomLeft" buttons="{{buttons}}" direction="vertical" reverse="{{true}}"></my-fab-button>
+    <my-fab-button position="center" buttons="{{buttons}}" direction="circle"></my-fab-button>
+    <my-fab-button theme="dark" position="topRight" buttons="{{buttons}}" reverse="{{true}}"></my-fab-button>
+    <my-fab-button theme="calm" position="bottomRight" buttons="{{buttons}}" reverse="{{true}}"></my-fab-button>
+  </div>
+</template>
+
+<script>
+import prompt from '@system.prompt'
+import router from '@system.router'
+
+export default {
+  data() {
+    return {
+      buttons: [
+        {
+          type: 'primary',
+          icon: 'airplane',
+          label: 'first label',
+          shape: 'circle',
+          click: () => {
+            console.log('button1')
+            prompt.showToast({
+              message: 'message' + this.num
+            })
+          }
+        },
+        {
+          type: 'primary',
+          icon: 'alarm',
+          label: 'label 2',
+          shape: 'circle',
+          disabled: true,
+          click: () => {
+            console.log('button2')
+          }
+        },
+        {
+          type: 'primary',
+          icon: 'bug',
+          label: 'a label 3',
+          shape: 'circle',
+          click: () => {
+            console.log('button3')
+            router.push({
+              uri: '/pages/accordion'
+            })
+          }
+        },
+        {
+          type: 'primary',
+          icon: 'build',
+          label: 'label 4',
+          shape: 'circle',
+          click: () => {
+            console.log('button4')
+            console.log(this.num)
+            this.test()
+          }
+        },
+      ],
+      num: 1
+    }
+  },
+
+  test() {
+    console.log('test')
+  }
+}
+</script>
+
+<style>
+</style>
