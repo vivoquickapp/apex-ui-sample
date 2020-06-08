@@ -7,12 +7,25 @@
     <my-search-bar input-focus="{{true}}"></my-search-bar>
     <text class="title">Show cancel button</text>
     <my-search-bar has-cancel="{{true}}"></my-search-bar>
+    <text class="title">Show options</text>
+    <my-search-bar options="{{options}}"></my-search-bar>
   </div>
 </template>
 
 <script>
 export default {
-  
+  data: {
+    options: [
+      {
+        label: '苹果', // 显示在候选项目上的值，不填的话为value的值
+        value: 'apple', // 按enter时实际获取的value，不填的话默认为label的值
+      },
+      {
+        label: '香蕉',
+        value: 'banana'
+      }
+    ]
+  }
 }
 </script>
 
