@@ -8,6 +8,7 @@
     <my-button ontap="handleWarning">警告提醒</my-button>
     <my-button ontap="handleError">错误提醒</my-button>
     <my-button ontap="handleDuration">自定义持续时间</my-button>
+    <my-button ontap="handleMarquee">文字滚动/固定在顶部/显示关闭按钮</my-button>
     <my-message id="message"></my-message>
   </div>
 </template>
@@ -50,6 +51,14 @@
                 content: '我将在 5 秒后消失',
                 duration: 5,
                 bgColor: 'yellow'
+            });
+        },
+        handleMarquee() {
+            this.$child('message').showMessage({
+                content: '这是一条滚动的提醒',
+                enableScroll: true,
+                showClose: true,
+                duration: 0    
             });
         }
     }
